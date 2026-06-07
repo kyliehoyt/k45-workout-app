@@ -10,7 +10,7 @@ This project includes:
 
 ## Purpose
 
-I got the chance to try a few F45 workouts while on vacation and fell in love with the class style, but there are no F45 studios close to where I live.
+I got the chance to try a few F45 workouts while on vacation and fell in love with the class style, but there are no F45 studios close to where I live. :(
 
 This app aims to:
 - Import weekly F45 workouts from community sources
@@ -33,15 +33,21 @@ Install dependencies
 uv sync
 ```
 
+## Formatting/Linting
+Format code and run lint checks using ruff:
+```bash
+uv run ruff format
+uv run ruff check
+```
 
 ## Project Structure
 ```text
 k45-workout-app/
 │
-├── scraper/        # Python data ingestion (Reddit parser etc.)
-├── data/           # Raw + processed workout data
-├── android/        # Mobile app
-├── docs/           # Architecture + design notes
+├── data_acquisition/   # Python data ingestion (Reddit parser etc.)
+├── data/               # Raw + processed workout data
+├── android/            # Mobile app
+├── docs/               # Architecture + design notes
 │
 ├── pyproject.toml
 ├── uv.lock
