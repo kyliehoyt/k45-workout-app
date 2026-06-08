@@ -9,8 +9,7 @@ from dataclasses import dataclass
 @dataclass
 class Equipment:
     """
-    Represents a piece of equipment used in exercises. It includes the name of the equipment and
-    any substitutes that can be used in place of it.
+    Represents a piece of equipment used in exercises.
      Attributes:
         name (str): The name of the equipment.
     """
