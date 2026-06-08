@@ -1,0 +1,297 @@
+{
+    "name": "Medusa",
+    "createdDate": "2026-06-07",
+    "categories": [
+        "Recovery",
+        "Resistance"
+    ],
+    "pods": [
+        {
+            "laps": [
+                {
+                    "stations": [
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        "90 to 90 supported"
+                                    ],
+                                    "timing": {
+                                        "work_seconds": 60,
+                                        "rest_seconds": 15
+                                    }
+                                },
+                                {
+                                    "exercises": [
+                                        "sumo rdl"
+                                    ],
+                                    "timing": {
+                                        "work_seconds": 60,
+                                        "rest_seconds": 20
+                                    }
+                                },
+                                {
+                                    "exercises": [
+                                        "sumo rdl"
+                                    ],
+                                    "timing": {
+                                        "work_seconds": 60,
+                                        "rest_seconds": 30
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        "samson stretch"
+                                    ],
+                                    "timing": {
+                                        "work_seconds": 60,
+                                        "rest_seconds": 15
+                                    }
+                                },
+                                {
+                                    "exercises": [
+                                        "barbell front squat + shoulder press + squat press"
+                                    ],
+                                    "timing": {
+                                        "work_seconds": 60,
+                                        "rest_seconds": 20
+                                    }
+                                },
+                                {
+                                    "exercises": [
+                                        "barbell front squat + shoulder press + squat press"
+                                    ],
+                                    "timing": {
+                                        "work_seconds": 60,
+                                        "rest_seconds": 30
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        "activation band floor clock"
+                                    ],
+                                    "timing": {
+                                        "work_seconds": 60,
+                                        "rest_seconds": 15
+                                    }
+                                },
+                                {
+                                    "exercises": [
+                                        "flat bench"
+                                    ],
+                                    "timing": {
+                                        "work_seconds": 60,
+                                        "rest_seconds": 20
+                                    }
+                                },
+                                {
+                                    "exercises": [
+                                        "flat bench"
+                                    ],
+                                    "timing": {
+                                        "work_seconds": 60,
+                                        "rest_seconds": 30
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        "downward dog calf pedals"
+                                    ],
+                                    "timing": {
+                                        "work_seconds": 60,
+                                        "rest_seconds": 15
+                                    }
+                                },
+                                {
+                                    "exercises": [
+                                        "step ups"
+                                    ],
+                                    "timing": {
+                                        "work_seconds": 60,
+                                        "rest_seconds": 20
+                                    }
+                                },
+                                {
+                                    "exercises": [
+                                        "step ups"
+                                    ],
+                                    "timing": {
+                                        "work_seconds": 60,
+                                        "rest_seconds": 30
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        "hamstring scoop"
+                                    ],
+                                    "timing": {
+                                        "work_seconds": 60,
+                                        "rest_seconds": 15
+                                    }
+                                },
+                                {
+                                    "exercises": [
+                                        "clean + lateral lunge"
+                                    ],
+                                    "timing": {
+                                        "work_seconds": 60,
+                                        "rest_seconds": 20
+                                    }
+                                },
+                                {
+                                    "exercises": [
+                                        "clean + lateral lunge"
+                                    ],
+                                    "timing": {
+                                        "work_seconds": 60,
+                                        "rest_seconds": 30
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        "arm circles"
+                                    ],
+                                    "timing": {
+                                        "work_seconds": 60,
+                                        "rest_seconds": 15
+                                    }
+                                },
+                                {
+                                    "exercises": [
+                                        "push up + knee tuck"
+                                    ],
+                                    "timing": {
+                                        "work_seconds": 60,
+                                        "rest_seconds": 20
+                                    }
+                                },
+                                {
+                                    "exercises": [
+                                        "push up + knee tuck"
+                                    ],
+                                    "timing": {
+                                        "work_seconds": 60,
+                                        "rest_seconds": 30
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        "lumbar twists"
+                                    ],
+                                    "timing": {
+                                        "work_seconds": 60,
+                                        "rest_seconds": 15
+                                    }
+                                },
+                                {
+                                    "exercises": [
+                                        "bulgarian pulses"
+                                    ],
+                                    "timing": {
+                                        "work_seconds": 60,
+                                        "rest_seconds": 20
+                                    }
+                                },
+                                {
+                                    "exercises": [
+                                        "bulgarian pulses"
+                                    ],
+                                    "timing": {
+                                        "work_seconds": 60,
+                                        "rest_seconds": 30
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        "back roll + candle stick"
+                                    ],
+                                    "timing": {
+                                        "work_seconds": 60,
+                                        "rest_seconds": 15
+                                    }
+                                },
+                                {
+                                    "exercises": [
+                                        "pendlay row"
+                                    ],
+                                    "timing": {
+                                        "work_seconds": 60,
+                                        "rest_seconds": 20
+                                    }
+                                },
+                                {
+                                    "exercises": [
+                                        "pendlay row"
+                                    ],
+                                    "timing": {
+                                        "work_seconds": 60,
+                                        "rest_seconds": 30
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        "power band standing bicep curl"
+                                    ],
+                                    "timing": {
+                                        "work_seconds": 60,
+                                        "rest_seconds": 15
+                                    }
+                                },
+                                {
+                                    "exercises": [
+                                        "bicep curl alternating"
+                                    ],
+                                    "timing": {
+                                        "work_seconds": 60,
+                                        "rest_seconds": 20
+                                    }
+                                },
+                                {
+                                    "exercises": [
+                                        "bicep curl alternating"
+                                    ],
+                                    "timing": {
+                                        "work_seconds": 60,
+                                        "rest_seconds": 30
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

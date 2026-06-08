@@ -1,0 +1,139 @@
+{
+    "name": "Apollo",
+    "createdDate": "2026-06-07",
+    "categories": [
+        "Resistance"
+    ],
+    "description": "A resistance workout designed for the PEAK phase to build strength endurance. Members choose between upper or lower body options at each station. One pod features a signature 11:45 running clock where the goal is to build maximum total load (weight x reps) through quality, repeatable sets.",
+    "pods": [
+        {
+            "laps": [
+                {
+                    "stations": [
+                        {
+                            "sets": [
+                                {
+                                    "repetitions": 4,
+                                    "exercises": [
+                                        "tricep kickbacks",
+                                        "pendulum lunges"
+                                    ],
+                                    "timing": {
+                                        "work_seconds": 35,
+                                        "rest_seconds": 25
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "repetitions": 4,
+                                    "exercises": [
+                                        "dumbbell single goblet row tempo",
+                                        "single clean + squat"
+                                    ],
+                                    "timing": {
+                                        "work_seconds": 35,
+                                        "rest_seconds": 25
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "repetitions": 4,
+                                    "exercises": [
+                                        "dumbbell single v sit press",
+                                        "single leg deadlift"
+                                    ],
+                                    "timing": {
+                                        "work_seconds": 35,
+                                        "rest_seconds": 25
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "laps": [
+                {
+                    "stations": [
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        "dumbbell bench incline pull",
+                                        "olympic barbell front squat"
+                                    ],
+                                    "timing": {
+                                        "work_seconds": 705,
+                                        "rest_seconds": 0,
+                                        "qualifier": "11:45"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "laps": [
+                {
+                    "stations": [
+                        {
+                            "sets": [
+                                {
+                                    "repetitions": 4,
+                                    "exercises": [
+                                        "deadlift + row",
+                                        "hip thrusts"
+                                    ],
+                                    "timing": {
+                                        "work_seconds": 35,
+                                        "rest_seconds": 25
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "repetitions": 4,
+                                    "exercises": [
+                                        "reverse curls",
+                                        "rdl pause"
+                                    ],
+                                    "timing": {
+                                        "work_seconds": 35,
+                                        "rest_seconds": 25
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "repetitions": 4,
+                                    "exercises": [
+                                        "push up pause",
+                                        "suitcase farmers walk"
+                                    ],
+                                    "timing": {
+                                        "work_seconds": 35,
+                                        "rest_seconds": 25
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

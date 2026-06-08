@@ -30,10 +30,12 @@ class ExerciseSet:
         exercise will be performed in a given set, but multiple options are provided to allow for 
         variety and substitutions.    
         set_timing (SetTiming): The timing for the set, including work and rest durations.
+        repetitions (int): The number of times to repeat this exercise set. Default is 1.    
     """
 
     exercises: list[Exercise]
     timing: SetTiming
+    repetitions: int = 1
 
 
 @dataclass
@@ -56,8 +58,10 @@ class Lap:
         stations (list[Station]): The stations that belong to the lap. Stations can be 
         performed in any order within the lap, but all stations must be completed before 
         advancing to the next lap.   
+        repetitions (int): The number of times to repeat the lap. Default is 1.
     """
     stations: list[Station]
+    repetitions: int = 1
 
 
 @dataclass
@@ -76,17 +80,17 @@ class Pod:
 @dataclass
 class Workout:
     """
-    Represents a workout, which includes its name, category, description, and various parameters
+    Represents a workout, which includes its name, categories, description, and various parameters
     related to the structure of the workout.
      Attributes:
         name (str): The name of the workout.
-        category (WorkoutCategory): The category that the workout belongs to.
+        categories (list[WorkoutCategory]): The categories that the workout belongs to.
         description (str): A brief description of the workout.
         pods (list[Pod]): An ordered list of pods that belong to the workout. Each pod 
         includes a list of stations.
     """
 
     name: str
-    category: WorkoutCategory
+    categories: list[WorkoutCategory]
     description: str = ""
     pods: list[Pod] = None
