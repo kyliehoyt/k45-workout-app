@@ -12,6 +12,7 @@ class TimingQualifier(enum.Enum):
     This enum represents qualifiers for the timing of a set. It can be used to indicate whether the
     timing of a set has special characteristics.
     """
+
     # Two people alternate performing the set, with one person working while the other rests
     YOU_GO_I_GO = "You Go, I Go"
     # Move as much as possible in 11 minutes and 45 seconds
@@ -30,4 +31,4 @@ class SetTiming:
 
     work_duration_seconds: int
     rest_duration_seconds: int
-    timing_qualifier: TimingQualifier = None
+    timing_qualifier: TimingQualifier | None = None
