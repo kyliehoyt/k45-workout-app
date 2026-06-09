@@ -34,10 +34,15 @@ uv sync
 ```
 
 ## Formatting/Linting
-Format code and run lint checks using ruff:
+Format code and run fast lint checks using Ruff:
 ```bash
 uv run ruff format
 uv run ruff check
+```
+
+Run Pylint (on a directory) for idiomatic naming and stricter style checks:
+```bash
+uv run pylint data_acquisition/
 ```
 
 ## Project Structure
