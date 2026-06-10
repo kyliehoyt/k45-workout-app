@@ -5,7 +5,7 @@ This module defines the Exercise data model.
 from dataclasses import dataclass
 import enum
 
-from data_acquisition.src.models.equipment import EquipmentOption
+from data_acquisition.models.equipment import EquipmentOption
 
 
 class MuscleGroup(enum.Enum):

@@ -5,8 +5,8 @@ This module defines the Workout model in the K45 system.
 from dataclasses import dataclass
 import enum
 
-from data_acquisition.src.models.exercise import Exercise
-from data_acquisition.src.models.set_timing import SetTiming
+from data_acquisition.models.exercise import Exercise
+from data_acquisition.models.set_timing import SetTiming
 
 
 class WorkoutCategory(enum.Enum):

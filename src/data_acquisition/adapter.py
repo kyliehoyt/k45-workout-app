@@ -3,9 +3,9 @@
 from pathlib import Path
 import json
 
-from data_acquisition.src.models.exercise import Exercise
-from data_acquisition.src.models.set_timing import SetTiming, TimingQualifier
-from data_acquisition.src.models.workout import (
+from .models.exercise import Exercise
+from .models.set_timing import SetTiming, TimingQualifier
+from .models.workout import (
     ExerciseSet,
     Lap,
     Pod,
@@ -47,11 +47,11 @@ class Adapter:
 
     def workout_dict_from_json(self, workout_file: str | Path) -> dict | None:
         """
-        Reads a workout from a JSON file and returns a Workout object.
+        Reads a workout from a JSON file and returns a dictionary or None if an error occurs.
          Args:
             workout_file (str | Path): The path to the JSON file containing the workout data.
          Returns:
-            Workout: The workout object created from the JSON data.
+            dict | None: The dictionary created from the JSON data or None if an error occurs.
         """
         file_path = self.workout_dir / workout_file
         try:
