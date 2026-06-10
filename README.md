@@ -45,15 +45,23 @@ Run Pylint (on a directory) for idiomatic naming and stricter style checks:
 uv run pylint data_acquisition/
 ```
 
+## Unit Testing
+Write and run unit tests with pytest:
+```bash
+uv run pytest path_to_tests/
+uv run pytest path_to_test_file.py
+uv run pytest path_to_test_file.py::test_function
+```
+
 ## Project Structure
 ```text
 k45-workout-app/
 │
-├── data_acquisition/   # Python data ingestion (Reddit parser etc.)
-├── data/               # Raw + processed workout data
-├── android/            # Mobile app
-├── docs/               # Architecture + design notes
-│
+├── src/                        # Python source and related data
+    ├── data/                   # Raw + processed workout data
+    ├── data_acquisition/       # Python data ingestion (from online sources)
+    └── tests/                  # pytest unit tests
+├── android/                    # Future android app
 ├── pyproject.toml
 ├── uv.lock
 └── README.md
