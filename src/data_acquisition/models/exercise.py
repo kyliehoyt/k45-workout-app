@@ -2,7 +2,7 @@
 This module defines the Exercise data model.
 """
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 import enum
 
 from data_acquisition.models.equipment import EquipmentOption
@@ -40,5 +40,5 @@ class Exercise:
     name: str
     description: str = ""
     visual_url: str = ""
-    required_equipment: list[EquipmentOption] = None
-    target_muscle_groups: list[MuscleGroup] = None
+    required_equipment: list[EquipmentOption] = field(default_factory=list)
+    target_muscle_groups: list[MuscleGroup] = field(default_factory=list)

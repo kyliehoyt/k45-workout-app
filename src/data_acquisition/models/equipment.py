@@ -3,7 +3,7 @@ This module defines the Equipment data model, which represents a piece of equipm
 in exercises.
 """
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 
 @dataclass
@@ -25,4 +25,4 @@ class EquipmentOption:
     """
 
     option: Equipment
-    substitutes: list[Equipment] = None
+    substitutes: list[Equipment] = field(default_factory=list)

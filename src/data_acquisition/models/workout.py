@@ -2,7 +2,7 @@
 This module defines the Workout model in the K45 system.
 """
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 import enum
 
 from data_acquisition.models.exercise import Exercise
@@ -33,7 +33,7 @@ class ExerciseSet:
         repetitions (int): The number of times to repeat this exercise set. Default is 1.
     """
 
-    exercises: list[Exercise]
+    exercises: list[Exercise] = field(default_factory=list)
     timing: SetTiming
     repetitions: int = 1
 
@@ -48,7 +48,7 @@ class Station:
         set includes an exercise and its timing.
     """
 
-    sets: list[ExerciseSet]
+    sets: list[ExerciseSet] = field(default_factory=list)
 
 
 @dataclass
@@ -62,7 +62,7 @@ class Lap:
         repetitions (int): The number of times to repeat the lap. Default is 1.
     """
 
-    stations: list[Station]
+    stations: list[Station] = field(default_factory=list)
     repetitions: int = 1
 
 
@@ -76,7 +76,7 @@ class Pod:
         are performed in order and listed out because SetTiming may differ between laps.
     """
 
-    laps: list[Lap]
+    laps: list[Lap] = field(default_factory=list)
 
 
 @dataclass
@@ -95,4 +95,4 @@ class Workout:
     name: str
     categories: list[WorkoutCategory]
     description: str = ""
-    pods: list[Pod] = None
+    pods: list[Pod] = field(default_factory=list)
