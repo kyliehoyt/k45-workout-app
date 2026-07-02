@@ -1,12 +1,28 @@
-
+"""
+This module provides a parser for workout text files. It extracts structured information 
+from the text, including workout names, metadata, timing, and exercises.
+The parser is designed to handle the specific format of K45 workout text files, which 
+include headers, metadata, timing sections, and exercise listings.
+"""
+import argparse
 from dataclasses import dataclass, field
 from pathlib import Path
-from pprint import pprint
 import re
 
 
 @dataclass
 class ParsedWorkout:
+    """
+    Represents a parsed workout with its associated metadata, timing, and exercises.
+    Attributes:
+        name (str): The name of the workout.
+        pods (int | None): The number of pods in the workout, if specified.
+        stations (str): A description of the stations in the workout.
+        sets (str): A description of the sets in the workout.
+        laps (str): A description of the laps in the workout.
+        timing (list[str]): A list of timing information for the workout.
+        exercises (list[str]): A list of exercises included in the workout.
+    """
     name: str = ""
     pods: int | None = None
     stations: str = ""
@@ -17,7 +33,12 @@ class ParsedWorkout:
 
 
 class WorkoutTextParser:
-
+    """
+    A parser for workout text files. It extracts structured information from the text, 
+    including workout names, metadata, timing, and exercises.
+    The parser is designed to handle the specific format of K45 workout text files, 
+    which include headers, metadata, timing sections, and exercise listings.
+    """
     HEADER_PATTERN = re.compile(
         # DayOfWeek Month Day: (name) to capture the name
         r"^[A-Za-z]+\s+[A-Za-z]+\s+\d+:\s+(.+)$"
@@ -29,6 +50,13 @@ class WorkoutTextParser:
     )
 
     def parse(self, text: str) -> list[ParsedWorkout]:
+        """
+        Parses the given workout text and returns a list of ParsedWorkout objects.
+        Args:
+            text (str): The workout text to parse.
+        Returns:
+            list[ParsedWorkout]: A list of parsed workout objects.
+        """
         workouts = []
 
         current_workout = None
@@ -143,17 +171,21 @@ class WorkoutTextParser:
 
 
 if __name__ == "__main__":
-    input_file = Path("Raw Text Input.txt")
+    parser = argparse.ArgumentParser(description="Parse workout text files.")
+    parser.add_argument("input_file", help="Path to the input text file")
+    args = parser.parse_args()
+
+    input_file = Path(args.input_file)
 
     with input_file.open("r", encoding="utf-8") as f:
-        text = f.read()
+        file_text = f.read()
 
     parser = WorkoutTextParser()
-    workouts = parser.parse(text)
+    parsed_workouts = parser.parse(file_text)
 
-    print(f"Parsed {len(workouts)} workouts.\n")
+    print(f"Parsed {len(parsed_workouts)} workouts.\n")
 
-    for workout in workouts:
+    for workout in parsed_workouts:
         print(f"{workout.name}")
         print(f"  Stations : {workout.stations}")
         print(f"  Pods     : {workout.pods}")
