@@ -33,8 +33,8 @@ class ExerciseSet:
         repetitions (int): The number of times to repeat this exercise set. Default is 1.
     """
 
-    exercises: list[Exercise] = field(default_factory=list)
     timing: SetTiming
+    exercises: list[Exercise] = field(default_factory=list)
     repetitions: int = 1
 
 
