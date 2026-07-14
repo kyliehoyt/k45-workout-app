@@ -7,6 +7,7 @@ from .models.exercise import Exercise
 from .models.set_timing import SetTiming, TimingQualifier
 from .models.workout import (
     ExerciseSet,
+    ExercisePrescription,
     Lap,
     Pod,
     Station,
@@ -101,7 +102,11 @@ class Adapter:
     def _exercise_set_from_dict(self, exercise_set_dict: dict) -> ExerciseSet:
         return ExerciseSet(
             exercises=[
-                Exercise(name=exercise) for exercise in exercise_set_dict["exercises"]
+                ExercisePrescription(
+                    exercise=Exercise(name=exercise),
+                    source_name=exercise,
+                )
+                for exercise in exercise_set_dict["exercises"]
             ],
             timing=self._timing_from_dict(exercise_set_dict["timing"]),
             repetitions=exercise_set_dict.get("repetitions", 1),

@@ -9,6 +9,7 @@ from data_acquisition.models.exercise import Exercise, MuscleGroup
 from data_acquisition.models.set_timing import SetTiming, TimingQualifier
 from data_acquisition.models.workout import (
     ExerciseSet,
+    ExercisePrescription,
     Lap,
     Pod,
     Station,
@@ -262,22 +263,39 @@ class WorkoutBuilder:
     def _build_exercises(
         self,
         exercise_names: list[str],
-    ) -> tuple[list[Exercise], TimingQualifier | None]:
+    ) -> tuple[list[ExercisePrescription], TimingQualifier | None]:
         exercises = []
         timing_qualifier = None
         for exercise_name in exercise_names:
             clean_name, qualifier = self._extract_timing_qualifier(
                 exercise_name)
             timing_qualifier = timing_qualifier or qualifier
-            exercises.append(self._exercise_from_name(clean_name))
+            exercises.append(self._exercise_prescription_from_name(clean_name))
         return exercises, timing_qualifier
 
-    def _exercise_from_name(self, exercise_name: str) -> Exercise:
+    def _exercise_prescription_from_name(self, exercise_name: str) -> ExercisePrescription:
         if self.exercise_repository is None:
-            return Exercise(name=exercise_name)
+            return ExercisePrescription(
+                exercise=Exercise(name=exercise_name),
+                source_name=exercise_name,
+            )
+
+        if hasattr(self.exercise_repository, "get_or_create_exercise"):
+            return ExercisePrescription(
+                exercise=self.exercise_repository.get_or_create_exercise(
+                    exercise_name),
+                source_name=exercise_name,
+                prescribed_equipment=(
+                    self.exercise_repository.prescribed_equipment_from_name(
+                        exercise_name)
+                ),
+            )
 
         exercise = self.exercise_repository.get_exercise_by_name(exercise_name)
-        return exercise or Exercise(name=exercise_name)
+        return ExercisePrescription(
+            exercise=exercise or Exercise(name=exercise_name),
+            source_name=exercise_name,
+        )
 
     def _extract_timing_qualifier(
         self,
@@ -428,7 +446,8 @@ class WorkoutBuilder:
             for lap in pod.laps
             for station in lap.stations
             for exercise_set in station.sets
-            for exercise in exercise_set.exercises
+            for exercise_prescription in exercise_set.exercises
+            for exercise in [exercise_prescription.exercise]
         ]
         if not exercises:
             return []
@@ -504,7 +523,7 @@ def _print_workout(workout: Workout) -> None:
                         else ""
                     )
                     exercise_names = ", ".join(
-                        exercise.name for exercise in exercise_set.exercises
+                        exercise.exercise.name for exercise in exercise_set.exercises
                     )
                     print(
                         f"        Set {set_number}{set_suffix}: "

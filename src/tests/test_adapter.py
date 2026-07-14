@@ -1,12 +1,6 @@
 from data_acquisition.adapter import (
-    Exercise,
     SetTiming,
     TimingQualifier,
-    ExerciseSet,
-    Lap,
-    Pod,
-    Station,
-    Workout,
     WorkoutCategory,
 )
 import json
@@ -252,6 +246,14 @@ def initialize_adapter_with_valid_directories(tmp_path):
     return Adapter(tmp_path)
 
 
+def exercise_names(exercise_set):
+    """Return canonical exercise names for an ExerciseSet."""
+    return [
+        prescription.exercise.name
+        for prescription in exercise_set.exercises
+    ]
+
+
 def test_workout_from_dict(tmp_path):
     """Test that the workout_from_dict method correctly converts a workout dictionary into a Workout object."""
     adapter = initialize_adapter_with_valid_directories(tmp_path)
@@ -266,15 +268,15 @@ def test_workout_from_dict(tmp_path):
     assert len(workout.pods[0].laps[0].stations) == 1
     assert len(workout.pods[0].laps[0].stations[0].sets) == 1
     assert workout.pods[0].laps[0].stations[0].sets[0].repetitions == 4
-    assert workout.pods[0].laps[0].stations[0].sets[0].exercises == [
-        Exercise(name="tricep kickbacks")]
+    assert exercise_names(workout.pods[0].laps[0].stations[0].sets[0]) == [
+        "tricep kickbacks"]
     assert workout.pods[0].laps[0].stations[0].sets[0].timing == SetTiming(
         work_duration_seconds=35, rest_duration_seconds=25)
     assert len(workout.pods[1].laps) == 1
     assert len(workout.pods[1].laps[0].stations) == 1
     assert workout.pods[1].laps[0].repetitions == 2
     assert len(workout.pods[1].laps[0].stations[0].sets) == 1
-    assert workout.pods[1].laps[0].stations[0].sets[0].exercises == [
-        Exercise(name="dumbbell bench incline pull"), Exercise(name="olympic barbell front squat")]
+    assert exercise_names(workout.pods[1].laps[0].stations[0].sets[0]) == [
+        "dumbbell bench incline pull", "olympic barbell front squat"]
     assert workout.pods[1].laps[0].stations[0].sets[0].timing == SetTiming(
         work_duration_seconds=705, rest_duration_seconds=0, timing_qualifier=TimingQualifier("11:45"))

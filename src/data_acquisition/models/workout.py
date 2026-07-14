@@ -5,6 +5,7 @@ This module defines the Workout model in the K45 system.
 from dataclasses import dataclass, field
 import enum
 
+from data_acquisition.models.equipment import EquipmentOption
 from data_acquisition.models.exercise import Exercise
 from data_acquisition.models.set_timing import SetTiming
 
@@ -21,12 +22,26 @@ class WorkoutCategory(enum.Enum):
 
 
 @dataclass
+class ExercisePrescription:
+    """
+    Represents an exercise as prescribed by a specific workout.
+
+    The canonical exercise identifies the movement. Source text, prescribed
+    equipment, and future modifiers belong here because they can vary by workout.
+    """
+
+    exercise: Exercise
+    source_name: str = ""
+    prescribed_equipment: list[EquipmentOption] = field(default_factory=list)
+
+
+@dataclass
 class ExerciseSet:
     """
     Represents a set of an exercise performed at a station. It includes the exercise being performed
     and the timing for the set.
      Attributes:
-        exercises (Exercise): The exercises that could be performed in the set. Only one
+        exercises (ExercisePrescription): The exercises that could be performed in the set. Only one
         exercise will be performed in a given set, but multiple options are provided to allow for
         variety and substitutions.
         set_timing (SetTiming): The timing for the set, including work and rest durations.
@@ -34,7 +49,7 @@ class ExerciseSet:
     """
 
     timing: SetTiming
-    exercises: list[Exercise] = field(default_factory=list)
+    exercises: list[ExercisePrescription] = field(default_factory=list)
     repetitions: int = 1
 
 

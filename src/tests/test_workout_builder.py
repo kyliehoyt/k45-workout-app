@@ -5,6 +5,13 @@ from data_acquisition.workout_builder import WorkoutBuilder
 from data_acquisition.workout_text_parser import ParsedWorkout
 
 
+def exercise_names(exercise_set):
+    return [
+        prescription.exercise.name
+        for prescription in exercise_set.exercises
+    ]
+
+
 def test_uniform_laps_are_compressed_into_repetitions():
     workout = WorkoutBuilder().build_workout(
         ParsedWorkout(
@@ -14,7 +21,8 @@ def test_uniform_laps_are_compressed_into_repetitions():
             sets="1",
             laps="3",
             timing=['45" work 0" rest'],
-            exercises=[f"{number}. exercise {number}" for number in range(1, 17)],
+            exercises=[
+                f"{number}. exercise {number}" for number in range(1, 17)],
         )
     )
 
@@ -22,7 +30,8 @@ def test_uniform_laps_are_compressed_into_repetitions():
     assert len(workout.pods[0].laps) == 1
     assert workout.pods[0].laps[0].repetitions == 3
     assert len(workout.pods[0].laps[0].stations) == 4
-    assert workout.pods[0].laps[0].stations[0].sets[0].timing == SetTiming(45, 0)
+    assert workout.pods[0].laps[0].stations[0].sets[0].timing == SetTiming(
+        45, 0)
 
 
 def test_uniform_sets_are_compressed_into_repetitions():
@@ -41,7 +50,7 @@ def test_uniform_sets_are_compressed_into_repetitions():
     exercise_set = workout.pods[0].laps[0].stations[0].sets[0]
     assert len(workout.pods[0].laps[0].stations[0].sets) == 1
     assert exercise_set.repetitions == 3
-    assert exercise_set.exercises == [Exercise(name="squat")]
+    assert exercise_names(exercise_set) == ["squat"]
 
 
 def test_missing_or_unparseable_timing_falls_back_to_default():
@@ -83,7 +92,7 @@ def test_lap_scoped_timing_prevents_lap_compression_and_extracts_ygig():
 
     assert len(workout.pods[0].laps) == 2
     first_set = workout.pods[0].laps[0].stations[0].sets[0]
-    assert first_set.exercises == [Exercise(name="static lunge")]
+    assert exercise_names(first_set) == ["static lunge"]
     assert first_set.timing == SetTiming(
         90,
         10,
@@ -119,9 +128,9 @@ def test_set_scoped_timing_and_sequential_activation_main_exercises():
     )
 
     station = workout.pods[0].laps[0].stations[0]
-    assert station.sets[0].exercises == [Exercise(name="mobility")]
+    assert exercise_names(station.sets[0]) == ["mobility"]
     assert station.sets[0].timing == SetTiming(60, 15)
-    assert station.sets[1].exercises == [Exercise(name="sumo rdl")]
+    assert exercise_names(station.sets[1]) == ["sumo rdl"]
     assert station.sets[1].timing == SetTiming(60, 20)
     assert station.sets[1].repetitions == 2
 
@@ -147,10 +156,7 @@ def test_repeated_number_headers_become_exercise_options():
     exercise_set = workout.pods[0].laps[0].stations[0].sets[0]
     assert workout.pods[0].laps[0].repetitions == 2
     assert exercise_set.repetitions == 2
-    assert exercise_set.exercises == [
-        Exercise(name="burpees"),
-        Exercise(name="floor row"),
-    ]
+    assert exercise_names(exercise_set) == ["burpees", "floor row"]
 
 
 def test_pod_scoped_timing_splits_special_middle_pod():
@@ -176,7 +182,7 @@ def test_pod_scoped_timing_splits_special_middle_pod():
     pod_1_set = workout.pods[0].laps[0].stations[0].sets[0]
     pod_2_set = workout.pods[1].laps[0].stations[0].sets[0]
     assert pod_1_set.repetitions == 4
-    assert pod_1_set.exercises == [Exercise(name="upper 1"), Exercise(name="lower 1")]
+    assert exercise_names(pod_1_set) == ["upper 1", "lower 1"]
     assert pod_1_set.timing == SetTiming(35, 25)
     assert pod_2_set.timing == SetTiming(
         705,
