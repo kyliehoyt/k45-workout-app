@@ -12,7 +12,6 @@ from .models.workout import (
     Pod,
     Station,
     Workout,
-    WorkoutCategory,
 )
 
 
@@ -70,11 +69,6 @@ class Adapter:
         """Convert a workout dictionary into a Workout object."""
         return Workout(
             name=workout_dict["name"],
-            categories=[
-                WorkoutCategory(category)
-                for category in workout_dict.get("categories", [])
-            ],
-            description=workout_dict.get("description", ""),
             pods=[self._pod_from_dict(pod)
                   for pod in workout_dict.get("pods", [])],
         )

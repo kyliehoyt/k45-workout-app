@@ -9,7 +9,7 @@ import json
 import re
 
 from data_acquisition.models.equipment import Equipment, EquipmentOption
-from data_acquisition.models.exercise import Exercise, MuscleGroup
+from data_acquisition.models.exercise import Exercise
 from data_acquisition.workout_text_parser import WorkoutTextParser
 
 
@@ -128,9 +128,6 @@ class ExerciseRepository:
     ) -> dict:
         return {
             "name": canonical_name,
-            "description": "",
-            "visual_url": "",
-            "target_muscle_groups": [],
             "source_names": [source_name],
         }
 
@@ -142,12 +139,6 @@ class ExerciseRepository:
     def _exercise_from_dict(self, exercise_dict: dict) -> Exercise:
         return Exercise(
             name=exercise_dict["name"],
-            description=exercise_dict.get("description", ""),
-            visual_url=exercise_dict.get("visual_url", ""),
-            target_muscle_groups=[
-                MuscleGroup(muscle_group)
-                for muscle_group in exercise_dict.get("target_muscle_groups", [])
-            ],
         )
 
     def _path_for_name(self, exercise_name: str) -> Path:
@@ -164,9 +155,6 @@ class ExerciseRepository:
 def exercise_to_dict(exercise: Exercise) -> dict:
     """Convert an Exercise object to a JSON-friendly dictionary."""
     exercise_dict = asdict(exercise)
-    exercise_dict["target_muscle_groups"] = [
-        muscle_group.value for muscle_group in exercise.target_muscle_groups
-    ]
     return exercise_dict
 
 

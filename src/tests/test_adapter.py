@@ -1,7 +1,6 @@
 from data_acquisition.adapter import (
     SetTiming,
     TimingQualifier,
-    WorkoutCategory,
 )
 import json
 from data_acquisition.adapter import Adapter
@@ -11,11 +10,6 @@ from data_acquisition.adapter import Adapter
 workout_data = {
     "name": "Sample Workout",
     "createdDate": "2026-06-07",
-    "categories": [
-        "Resistance",
-        "Recovery",
-    ],
-    "description": "A fake workout with lots of weird features to test the adapter.",
     "pods": [
         {
             "laps": [
@@ -68,11 +62,6 @@ workout_data = {
 
 workout_dict = {
     "name": "Sample Workout",
-    "categories": [
-            "Resistance",
-            "Recovery",
-    ],
-    "description": "A fake workout with lots of weird features to test the adapter.",
     "pods": [
         {
             "laps": [
@@ -196,7 +185,6 @@ def test_workout_dict_from_json(tmp_path):
     # Assert that the workout data was read correctly
     assert workout_dict is not None
     assert workout_dict["name"] == "Sample Workout"
-    assert workout_dict["categories"] == ["Resistance", "Recovery"]
     assert len(workout_dict["pods"]) == 2
     assert len(workout_dict["pods"][0]["laps"]) == 1
     assert len(workout_dict["pods"][0]["laps"][0]["stations"]) == 1
@@ -260,9 +248,6 @@ def test_workout_from_dict(tmp_path):
     workout = adapter.workout_from_dict(workout_dict)
 
     assert workout.name == "Sample Workout"
-    assert workout.categories == [
-        WorkoutCategory.RESISTANCE, WorkoutCategory.RECOVERY]
-    assert workout.description == "A fake workout with lots of weird features to test the adapter."
     assert len(workout.pods) == 2
     assert len(workout.pods[0].laps) == 1
     assert len(workout.pods[0].laps[0].stations) == 1

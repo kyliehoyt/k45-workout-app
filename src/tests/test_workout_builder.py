@@ -1,4 +1,4 @@
-from data_acquisition.models.exercise import Exercise, MuscleGroup
+from data_acquisition.models.exercise import Exercise
 from data_acquisition.models.set_timing import SetTiming, TimingQualifier
 from data_acquisition.models.workout import WorkoutCategory
 from data_acquisition.workout_builder import WorkoutBuilder
@@ -189,25 +189,3 @@ def test_pod_scoped_timing_splits_special_middle_pod():
         0,
         TimingQualifier.ELEVEN_FORTYFIVE,
     )
-
-
-def test_categories_can_be_derived_from_repository_exercises():
-    class Repository:
-        def get_exercise_by_name(self, exercise_name):
-            if exercise_name == "row erg":
-                return Exercise(name=exercise_name, target_muscle_groups=[MuscleGroup.HEART])
-            return Exercise(name=exercise_name, target_muscle_groups=[MuscleGroup.LEGS])
-
-    workout = WorkoutBuilder(Repository()).build_workout(
-        ParsedWorkout(
-            name="Hybrid",
-            pods=1,
-            stations="2",
-            sets="1",
-            laps="1",
-            timing=['30" work 15" rest'],
-            exercises=["1. row erg", "2. squat"],
-        )
-    )
-
-    assert workout.categories == [WorkoutCategory.HYBRID]

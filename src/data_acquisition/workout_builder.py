@@ -5,7 +5,7 @@ from dataclasses import replace
 from pathlib import Path
 import re
 
-from data_acquisition.models.exercise import Exercise, MuscleGroup
+from data_acquisition.models.exercise import Exercise
 from data_acquisition.models.set_timing import SetTiming, TimingQualifier
 from data_acquisition.models.workout import (
     ExerciseSet,
@@ -14,7 +14,6 @@ from data_acquisition.models.workout import (
     Pod,
     Station,
     Workout,
-    WorkoutCategory,
 )
 from data_acquisition.workout_text_parser import ParsedWorkout, WorkoutTextParser
 
@@ -58,7 +57,6 @@ class WorkoutBuilder:
         pods = self._build_pods(parsed_workout)
         return Workout(
             name=parsed_workout.name,
-            categories=self._determine_categories_from_workout(pods),
             pods=pods,
         )
 
@@ -438,34 +436,6 @@ class WorkoutBuilder:
             else:
                 compressed.append(exercise_set)
         return compressed
-
-    def _determine_categories_from_workout(self, pods: list[Pod]) -> list[WorkoutCategory]:
-        exercises = [
-            exercise
-            for pod in pods
-            for lap in pod.laps
-            for station in lap.stations
-            for exercise_set in station.sets
-            for exercise_prescription in exercise_set.exercises
-            for exercise in [exercise_prescription.exercise]
-        ]
-        if not exercises:
-            return []
-
-        has_cardio = any(
-            MuscleGroup.HEART in exercise.target_muscle_groups for exercise in exercises
-        )
-        has_strength = any(
-            exercise.target_muscle_groups
-            and MuscleGroup.HEART not in exercise.target_muscle_groups
-            for exercise in exercises
-        )
-
-        if has_cardio and has_strength:
-            return [WorkoutCategory.HYBRID]
-        if has_cardio:
-            return [WorkoutCategory.CARDIO]
-        return [WorkoutCategory.RESISTANCE] if has_strength else []
 
     def _parse_count(self, text: str) -> int | None:
         # find the first occurrence of a number in the text

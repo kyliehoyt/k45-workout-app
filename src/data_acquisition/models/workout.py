@@ -97,17 +97,12 @@ class Pod:
 @dataclass
 class Workout:
     """
-    Represents a workout, which includes its name, categories, description, and various parameters
-    related to the structure of the workout.
+Represents a workout, which includes its name and the top-level pods that make up the workout. 
      Attributes:
         name (str): The name of the workout.
-        categories (list[WorkoutCategory]): The categories that the workout belongs to.
-        description (str): A brief description of the workout.
         pods (list[Pod]): An ordered list of pods that belong to the workout. Each pod
         includes a list of stations.
     """
 
     name: str
-    categories: list[WorkoutCategory]
-    description: str = ""
     pods: list[Pod] = field(default_factory=list)
