@@ -19,6 +19,7 @@ class ExerciseRepository:
     EQUIPMENT_ALIASES = {
         "activation band": "activation band",
         "barbell": "barbell",
+        "balance trainer": "balance trainer",
         "deadball": "deadball",
         "double kb": "kettlebell",
         "dumbbell": "dumbbell",
@@ -26,10 +27,13 @@ class ExerciseRepository:
         "kettlebell": "kettlebell",
         "olympic barbell": "barbell",
         "plate": "plate",
+        "plyo box": "box",
         "power band": "power band",
         "revo": "revo bar",
         "sandbag": "sandbag",
         "single kb": "kettlebell",
+        "soft box": "box",
+        "softbox": "box",
         "suspension trainer": "suspension trainer",
         "ybell": "ybell",
     }
@@ -45,7 +49,8 @@ class ExerciseRepository:
 
     def get_exercise_by_name(self, exercise_name: str) -> Exercise | None:
         """Return an existing exercise matching the raw or canonical name."""
-        canonical_name, _equipment = self.normalize_exercise_name(exercise_name)
+        canonical_name, _ = self.normalize_exercise_name(
+            exercise_name)
         path = self._path_for_name(canonical_name)
         if not path.exists():
             return None
@@ -53,7 +58,8 @@ class ExerciseRepository:
 
     def get_or_create_exercise(self, exercise_name: str) -> Exercise:
         """Return an existing exercise or create one from a raw source name."""
-        canonical_name, _equipment_names = self.normalize_exercise_name(exercise_name)
+        canonical_name, _ = self.normalize_exercise_name(
+            exercise_name)
         path = self._path_for_name(canonical_name)
         if path.exists():
             exercise_dict = json.loads(path.read_text(encoding="utf-8"))
@@ -72,7 +78,8 @@ class ExerciseRepository:
 
     def prescribed_equipment_from_name(self, exercise_name: str) -> list[EquipmentOption]:
         """Return equipment prescribed by a raw exercise name."""
-        _canonical_name, equipment_names = self.normalize_exercise_name(exercise_name)
+        _, equipment_names = self.normalize_exercise_name(
+            exercise_name)
         return [
             EquipmentOption(option=Equipment(equipment_name))
             for equipment_name in equipment_names
@@ -86,7 +93,8 @@ class ExerciseRepository:
             for numbered_exercise in workout.exercises:
                 match = self.NUMBERED_EXERCISE_PATTERN.match(numbered_exercise)
                 if match:
-                    exercises.append(self.get_or_create_exercise(match.group(1)))
+                    exercises.append(
+                        self.get_or_create_exercise(match.group(1)))
         return exercises
 
     def normalize_exercise_name(self, exercise_name: str) -> tuple[str, list[str]]:
@@ -101,7 +109,7 @@ class ExerciseRepository:
             equipment_name = self.EQUIPMENT_ALIASES[match.group(1).lower()]
             if equipment_name not in equipment_names:
                 equipment_names.append(equipment_name)
-            clean_name = self._normalize_spaces(clean_name[match.end() :])
+            clean_name = self._normalize_spaces(clean_name[match.end():])
 
         return clean_name, equipment_names
 
@@ -109,7 +117,8 @@ class ExerciseRepository:
         clean_name = exercise_name.lower()
         clean_name = re.sub(r"\([^)]*\)", "", clean_name)
         clean_name = re.sub(r"\bygig\b", "", clean_name)
-        clean_name = re.sub(r"^\d+x\s+", "", clean_name)
+        clean_name = re.sub(r"\b\d+x\s\b", "", clean_name)  # e.g., "3x"
+        clean_name = re.sub(r"\b\d+x\d\b", "", clean_name)  # e.g., "3x5"
         return self._normalize_spaces(clean_name)
 
     def _exercise_dict(
