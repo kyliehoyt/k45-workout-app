@@ -1,9 +1,6 @@
 {
-  "description": "",
   "name": "burpees",
   "source_names": [
     "kettlebell burpees"
-  ],
-  "target_muscle_groups": [],
-  "visual_url": ""
+  ]
 }

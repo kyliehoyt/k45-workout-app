@@ -1,9 +1,6 @@
 {
-  "description": "",
   "name": "arm circles",
   "source_names": [
     "arm circles"
-  ],
-  "target_muscle_groups": [],
-  "visual_url": ""
+  ]
 }

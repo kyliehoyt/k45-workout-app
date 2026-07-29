@@ -1,9 +1,6 @@
 {
-  "description": "",
   "name": "alternate arm row",
   "source_names": [
     "dumbbell alternate arm row"
-  ],
-  "target_muscle_groups": [],
-  "visual_url": ""
+  ]
 }

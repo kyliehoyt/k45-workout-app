@@ -1,9 +1,6 @@
 {
-  "description": "",
   "name": "single clean + squat",
   "source_names": [
     "dumbbell single clean + squat"
-  ],
-  "target_muscle_groups": [],
-  "visual_url": ""
+  ]
 }

@@ -1,9 +1,6 @@
 {
-  "description": "",
   "name": "thruster",
   "source_names": [
     "plate thruster ygig"
-  ],
-  "target_muscle_groups": [],
-  "visual_url": ""
+  ]
 }

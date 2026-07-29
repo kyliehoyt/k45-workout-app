@@ -1,9 +1,6 @@
 {
-  "description": "",
   "name": "side to side tilt",
   "source_names": [
     "balance trainer side to side tilt"
-  ],
-  "target_muscle_groups": [],
-  "visual_url": ""
+  ]
 }

@@ -1,9 +1,6 @@
 {
-  "description": "",
   "name": "conventional deadlift",
   "source_names": [
     "barbell conventional deadlift"
-  ],
-  "target_muscle_groups": [],
-  "visual_url": ""
+  ]
 }

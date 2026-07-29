@@ -465,10 +465,7 @@ def _format_timing(timing: SetTiming) -> str:
 
 
 def _print_workout(workout: Workout) -> None:
-    categories = ", ".join(
-        category.value for category in workout.categories) or "None"
     print(workout.name)
-    print(f"  Categories: {categories}")
     print(f"  Pods      : {len(workout.pods)}")
 
     for pod_number, pod in enumerate(workout.pods, start=1):

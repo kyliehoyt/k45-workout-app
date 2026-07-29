@@ -1,9 +1,7 @@
 {
-  "description": "",
   "name": "hip thruster",
   "source_names": [
-    "sandbag hip thruster"
-  ],
-  "target_muscle_groups": [],
-  "visual_url": ""
+    "sandbag hip thruster",
+    "plate hip thruster"
+  ]
 }
