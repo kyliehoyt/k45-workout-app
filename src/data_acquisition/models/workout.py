@@ -97,11 +97,11 @@ class Pod:
 @dataclass
 class Workout:
     """
-Represents a workout, which includes its name and the top-level pods that make up the workout. 
-     Attributes:
-        name (str): The name of the workout.
-        pods (list[Pod]): An ordered list of pods that belong to the workout. Each pod
-        includes a list of stations.
+    Represents a workout, which includes its name and the top-level pods that make up the workout.
+         Attributes:
+            name (str): The name of the workout.
+            pods (list[Pod]): An ordered list of pods that belong to the workout. Each pod
+            includes a list of stations.
     """
 
     name: str

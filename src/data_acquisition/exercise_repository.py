@@ -3,12 +3,12 @@
 from __future__ import annotations
 
 import argparse
-from dataclasses import asdict
 from pathlib import Path
 import json
 import re
 
-from data_acquisition.models.equipment import Equipment, EquipmentOption
+from data_acquisition.equipment_repository import EquipmentRepository
+from data_acquisition.models.equipment import EquipmentOption
 from data_acquisition.models.exercise import Exercise
 from data_acquisition.workout_text_parser import WorkoutTextParser
 
@@ -16,74 +16,47 @@ from data_acquisition.workout_text_parser import WorkoutTextParser
 class ExerciseRepository:
     """Store exercises as JSON files keyed by normalized, equipment-free names."""
 
-    EQUIPMENT_ALIASES = {
-        "activation band": "activation band",
-        "barbell": "barbell",
-        "balance trainer": "balance trainer",
-        "deadball": "deadball",
-        "double kb": "kettlebell",
-        "dumbbell": "dumbbell",
-        "dumbbells": "dumbbell",
-        "kettlebell": "kettlebell",
-        "olympic barbell": "barbell",
-        "plate": "plate",
-        "plyo box": "box",
-        "power band": "power band",
-        "revo": "revo bar",
-        "sandbag": "sandbag",
-        "single kb": "kettlebell",
-        "soft box": "box",
-        "softbox": "box",
-        "suspension trainer": "suspension trainer",
-        "ybell": "ybell",
-    }
-    EQUIPMENT_PATTERN = re.compile(
-        rf"^({'|'.join(re.escape(alias) for alias in sorted(EQUIPMENT_ALIASES, key=len, reverse=True))})\b\s*",
-        re.IGNORECASE,
-    )
     NUMBERED_EXERCISE_PATTERN = re.compile(r"^\d+\.\s*(.+)$")
 
-    def __init__(self, exercise_dir: str | Path):
+    def __init__(
+        self, exercise_dir: str | Path, equipment_repository: EquipmentRepository = None
+    ):
         self.exercise_dir = Path(exercise_dir)
         self.exercise_dir.mkdir(parents=True, exist_ok=True)
+        self.equipment_repository = equipment_repository
 
-    def get_exercise_by_name(self, exercise_name: str) -> Exercise | None:
-        """Return an existing exercise matching the raw or canonical name."""
-        canonical_name, _ = self.normalize_exercise_name(
-            exercise_name)
-        path = self._path_for_name(canonical_name)
-        if not path.exists():
-            return None
-        return self._exercise_from_dict(json.loads(path.read_text(encoding="utf-8")))
+    def get_or_create_exercise_from_text(
+        self, exercise_text: str
+    ) -> tuple[list[EquipmentOption], Exercise] | None:
+        """Return an existing exercise or create one from a raw exercise text."""
+        equipment_options, exercise_only_text = (
+            self.equipment_repository.get_or_create_equipment_from_text(
+                exercise_text)
+        )
+        clean_name = self._clean_exercise_text(exercise_only_text)
 
-    def get_or_create_exercise(self, exercise_name: str) -> Exercise:
-        """Return an existing exercise or create one from a raw source name."""
-        canonical_name, _ = self.normalize_exercise_name(
-            exercise_name)
-        path = self._path_for_name(canonical_name)
+        if not clean_name:
+            # exercise text was only equipment, so use the first equipment name as the exercise name
+            if equipment_options:
+                clean_name = equipment_options[0].option.name
+            else:
+                return None  # no exercise name or equipment found
+
+        path = self._path_for_name(clean_name)
         if path.exists():
             exercise_dict = json.loads(path.read_text(encoding="utf-8"))
-            self._merge_source_name(exercise_dict, exercise_name)
+            self._merge_source_text(exercise_dict, exercise_text)
         else:
             exercise_dict = self._exercise_dict(
-                canonical_name=canonical_name,
-                source_name=exercise_name,
+                exercise_name=clean_name,
+                source_text=exercise_text,
             )
 
         path.write_text(
             json.dumps(exercise_dict, indent=2, sort_keys=True) + "\n",
             encoding="utf-8",
         )
-        return self._exercise_from_dict(exercise_dict)
-
-    def prescribed_equipment_from_name(self, exercise_name: str) -> list[EquipmentOption]:
-        """Return equipment prescribed by a raw exercise name."""
-        _, equipment_names = self.normalize_exercise_name(
-            exercise_name)
-        return [
-            EquipmentOption(option=Equipment(equipment_name))
-            for equipment_name in equipment_names
-        ]
+        return (equipment_options, self._exercise_from_dict(exercise_dict))
 
     def seed_from_raw_text(self, text: str) -> list[Exercise]:
         """Create repository exercises from every parsed exercise in raw workout text."""
@@ -93,48 +66,38 @@ class ExerciseRepository:
             for numbered_exercise in workout.exercises:
                 match = self.NUMBERED_EXERCISE_PATTERN.match(numbered_exercise)
                 if match:
-                    exercises.append(
-                        self.get_or_create_exercise(match.group(1)))
+                    _, exercise = self.get_or_create_exercise_from_text(
+                        match.group(1))
+                    if exercise:
+                        exercises.append(exercise)
+                    else:
+                        print(
+                            f"Warning: Could not create exercise from text: '{match.group(1)}'"
+                        )
         return exercises
 
-    def normalize_exercise_name(self, exercise_name: str) -> tuple[str, list[str]]:
-        """Split leading equipment words from the canonical exercise movement name."""
-        clean_name = self._clean_source_name(exercise_name)
-        equipment_names = []
-
-        while True:
-            match = self.EQUIPMENT_PATTERN.match(clean_name)
-            if not match:
-                break
-            equipment_name = self.EQUIPMENT_ALIASES[match.group(1).lower()]
-            if equipment_name not in equipment_names:
-                equipment_names.append(equipment_name)
-            clean_name = self._normalize_spaces(clean_name[match.end():])
-
-        return clean_name, equipment_names
-
-    def _clean_source_name(self, exercise_name: str) -> str:
-        clean_name = exercise_name.lower()
-        clean_name = re.sub(r"\([^)]*\)", "", clean_name)
-        clean_name = re.sub(r"\bygig\b", "", clean_name)
-        clean_name = re.sub(r"\b\d+x\s\b", "", clean_name)  # e.g., "3x"
-        clean_name = re.sub(r"\b\d+x\d\b", "", clean_name)  # e.g., "3x5"
-        return self._normalize_spaces(clean_name)
+    def _clean_exercise_text(self, exercise_text: str) -> str:
+        clean_text = exercise_text.lower()
+        clean_text = re.sub(r"\([^)]*\)", "", clean_text)
+        clean_text = re.sub(r"\bygig\b", "", clean_text)
+        clean_text = re.sub(r"\b\d+x\s\b", "", clean_text)  # e.g., "3x"
+        clean_text = re.sub(r"\b\d+x\d\b", "", clean_text)  # e.g., "3x5"
+        return self._normalize_spaces(clean_text)
 
     def _exercise_dict(
         self,
-        canonical_name: str,
-        source_name: str,
+        exercise_name: str,
+        source_text: str,
     ) -> dict:
         return {
-            "name": canonical_name,
-            "source_names": [source_name],
+            "name": exercise_name,
+            "source_texts": [source_text],
         }
 
-    def _merge_source_name(self, exercise_dict: dict, source_name: str) -> None:
-        source_names = exercise_dict.setdefault("source_names", [])
-        if source_name not in source_names:
-            source_names.append(source_name)
+    def _merge_source_text(self, exercise_dict: dict, source_text: str) -> None:
+        source_texts = exercise_dict.setdefault("source_texts", [])
+        if source_text not in source_texts:
+            source_texts.append(source_text)
 
     def _exercise_from_dict(self, exercise_dict: dict) -> Exercise:
         return Exercise(
@@ -152,12 +115,6 @@ class ExerciseRepository:
         return re.sub(r"\s+", " ", text).strip()
 
 
-def exercise_to_dict(exercise: Exercise) -> dict:
-    """Convert an Exercise object to a JSON-friendly dictionary."""
-    exercise_dict = asdict(exercise)
-    return exercise_dict
-
-
 def main() -> None:
     """Seed an exercise repository from a raw workout text file."""
     parser = argparse.ArgumentParser(
@@ -169,11 +126,19 @@ def main() -> None:
         default=Path("src") / "data" / "exercises",
         help="Directory where exercise JSON files are stored",
     )
+    parser.add_argument(
+        "--equipment-dir",
+        default=Path("src") / "data" / "equipment",
+        help="Directory where equipment JSON files are stored",
+    )
     args = parser.parse_args()
 
     input_file = Path(args.input_file)
     raw_text = input_file.read_text(encoding="utf-8")
-    repository = ExerciseRepository(args.exercise_dir)
+    repository = ExerciseRepository(
+        args.exercise_dir, equipment_repository=EquipmentRepository(
+            args.equipment_dir)
+    )
     exercises = repository.seed_from_raw_text(raw_text)
 
     print(

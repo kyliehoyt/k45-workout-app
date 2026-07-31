@@ -20,13 +20,11 @@ class Adapter:
 
     def __init__(self, source_dir: str):
         if not Path(source_dir).is_dir():
-            raise ValueError(
-                "Source directory does not exist or is not a directory.")
+            raise ValueError("Source directory does not exist or is not a directory.")
 
         workout_dir = Path(source_dir) / "workouts"
         if not Path(workout_dir).is_dir():
-            raise ValueError(
-                "Workouts directory does not exist or is not a directory.")
+            raise ValueError("Workouts directory does not exist or is not a directory.")
 
         exercise_dir = Path(source_dir) / "exercises"
         if not Path(exercise_dir).is_dir():
@@ -69,8 +67,7 @@ class Adapter:
         """Convert a workout dictionary into a Workout object."""
         return Workout(
             name=workout_dict["name"],
-            pods=[self._pod_from_dict(pod)
-                  for pod in workout_dict.get("pods", [])],
+            pods=[self._pod_from_dict(pod) for pod in workout_dict.get("pods", [])],
         )
 
     def _pod_from_dict(self, pod_dict: dict) -> Pod:
@@ -108,8 +105,7 @@ class Adapter:
 
     def _timing_from_dict(self, timing_dict: dict) -> SetTiming:
         if not ("work_seconds" in timing_dict and "rest_seconds" in timing_dict):
-            raise ValueError(
-                "Timing must include both work_seconds and rest_seconds.")
+            raise ValueError("Timing must include both work_seconds and rest_seconds.")
         qualifier = timing_dict.get("qualifier")
         return SetTiming(
             work_duration_seconds=timing_dict["work_seconds"],

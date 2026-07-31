@@ -1,9 +1,10 @@
 """
-This module provides a parser for workout text files. It extracts structured information 
+This module provides a parser for workout text files. It extracts structured information
 from the text, including workout names, metadata, timing, and exercises.
-The parser is designed to handle the specific format of K45 workout text files, which 
+The parser is designed to handle the specific format of K45 workout text files, which
 include headers, metadata, timing sections, and exercise listings.
 """
+
 import argparse
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -23,6 +24,7 @@ class ParsedWorkout:
         timing (list[str]): A list of timing information for the workout.
         exercises (list[str]): A list of exercises included in the workout.
     """
+
     name: str = ""
     pods: int | None = None
     stations: str = ""
@@ -34,11 +36,12 @@ class ParsedWorkout:
 
 class WorkoutTextParser:
     """
-    A parser for workout text files. It extracts structured information from the text, 
+    A parser for workout text files. It extracts structured information from the text,
     including workout names, metadata, timing, and exercises.
-    The parser is designed to handle the specific format of K45 workout text files, 
+    The parser is designed to handle the specific format of K45 workout text files,
     which include headers, metadata, timing sections, and exercise listings.
     """
+
     HEADER_PATTERN = re.compile(
         # DayOfWeek Month Day: (name) to capture the name
         r"^[A-Za-z]+\s+[A-Za-z]+\s+\d+:\s+(.+)$"
@@ -122,13 +125,14 @@ class WorkoutTextParser:
 
             # timing continues until another section begins
             if reading_timing:
-
                 # exercise section markers
-                if lower.startswith((
-                    "upper body",
-                    "lower body",
-                    "cardio",
-                    "resistance",)
+                if lower.startswith(
+                    (
+                        "upper body",
+                        "lower body",
+                        "cardio",
+                        "resistance",
+                    )
                 ):
                     reading_timing = False
                     reading_exercises = True
@@ -142,11 +146,14 @@ class WorkoutTextParser:
                     continue
 
             # Ignore section headers after timing section
-            if lower.startswith(("upper body",
-                                 "lower body",
-                                 "cardio",
-                                 "resistance",)
-                                ):
+            if lower.startswith(
+                (
+                    "upper body",
+                    "lower body",
+                    "cardio",
+                    "resistance",
+                )
+            ):
                 reading_exercises = True
                 continue
 

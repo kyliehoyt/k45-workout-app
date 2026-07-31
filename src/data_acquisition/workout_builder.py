@@ -32,15 +32,14 @@ class WorkoutBuilder:
     POD_SCOPE_PATTERN = re.compile(r"\bpods?\s+([0-9&,\sand]+)", re.IGNORECASE)
     LAP_SCOPE_PATTERN = re.compile(r"\blaps?\s+(\d+)", re.IGNORECASE)
     SET_SCOPE_PATTERN = re.compile(r"\bsets?\s+([0-9&,\sand]+)", re.IGNORECASE)
-    DEFAULT_TIMING = SetTiming(
-        work_duration_seconds=45, rest_duration_seconds=15)
+    DEFAULT_TIMING = SetTiming(work_duration_seconds=45, rest_duration_seconds=15)
 
     def __init__(self, exercise_repository=None):
         """
         Initialize the builder.
 
         Args:
-            exercise_repository: Optional repository with get_exercise_by_name(name).
+            exercise_repository: Optional repository with get_or_create_exercise_from_text(text).
         """
         self.exercise_repository = exercise_repository
 
@@ -125,8 +124,7 @@ class WorkoutBuilder:
     ) -> Station:
         sets = []
         for set_index in range(1, set_count + 1):
-            exercise_names = station_group[min(
-                set_index - 1, len(station_group) - 1)]
+            exercise_names = station_group[min(set_index - 1, len(station_group) - 1)]
             exercises, qualifier = self._build_exercises(exercise_names)
             timing = self._timing_for(
                 timing_rules=timing_rules,
@@ -157,8 +155,7 @@ class WorkoutBuilder:
         set_count: int,
         sets_text: str,
     ) -> list[list[list[str]]]:
-        exercises_by_number = self._exercise_names_by_number(
-            numbered_exercises)
+        exercises_by_number = self._exercise_names_by_number(numbered_exercises)
         if self._uses_repeated_numbered_options(exercises_by_number, station_count):
             return [
                 [[name for name in exercises_by_number[number]]]
@@ -185,7 +182,9 @@ class WorkoutBuilder:
 
         return [[[name]] for name in exercise_names[:station_count]]
 
-    def _exercise_names_by_number(self, numbered_exercises: list[str]) -> dict[int, list[str]]:
+    def _exercise_names_by_number(
+        self, numbered_exercises: list[str]
+    ) -> dict[int, list[str]]:
         exercises_by_number: dict[int, list[str]] = {}
         for text in numbered_exercises:
             match = self.EXERCISE_PATTERN.match(text)
@@ -215,8 +214,7 @@ class WorkoutBuilder:
         sets_text: str,
     ) -> bool:
         lower_sets = sets_text.lower()
-        effective_station_count = self._parenthetical_count(
-            sets_text) or station_count
+        effective_station_count = self._parenthetical_count(sets_text) or station_count
         return (
             exercise_count == effective_station_count * 2
             and set_count > 1
@@ -238,11 +236,14 @@ class WorkoutBuilder:
             if rule["timing"].timing_qualifier == TimingQualifier.ELEVEN_FORTYFIVE
             for pod in rule.get("pods", [])
         }
-        remaining_station_count = len(
-            station_groups) - len(single_station_pods)
+        remaining_station_count = len(station_groups) - len(single_station_pods)
         flexible_pod_count = pod_count - len(single_station_pods)
-        base_size = remaining_station_count // flexible_pod_count if flexible_pod_count else 0
-        extra = remaining_station_count % flexible_pod_count if flexible_pod_count else 0
+        base_size = (
+            remaining_station_count // flexible_pod_count if flexible_pod_count else 0
+        )
+        extra = (
+            remaining_station_count % flexible_pod_count if flexible_pod_count else 0
+        )
 
         pod_station_groups = []
         station_index = 0
@@ -253,46 +254,44 @@ class WorkoutBuilder:
                 size = base_size + (1 if extra > 0 else 0)
                 extra -= 1 if extra > 0 else 0
             pod_station_groups.append(
-                station_groups[station_index:station_index + size])
+                station_groups[station_index : station_index + size]
+            )
             station_index += size
 
         return pod_station_groups
 
     def _build_exercises(
         self,
-        exercise_names: list[str],
+        exercise_texts: list[str],
     ) -> tuple[list[ExercisePrescription], TimingQualifier | None]:
-        exercises = []
+        exercise_prescriptions = []
         timing_qualifier = None
-        for exercise_name in exercise_names:
-            clean_name, qualifier = self._extract_timing_qualifier(
-                exercise_name)
+        for exercise_text in exercise_texts:
+            equipment_and_exercise, qualifier = self._extract_timing_qualifier(
+                exercise_text
+            )
             timing_qualifier = timing_qualifier or qualifier
-            exercises.append(self._exercise_prescription_from_name(clean_name))
-        return exercises, timing_qualifier
+            exercise_prescriptions.append(
+                self._exercise_prescription_from_name(equipment_and_exercise)
+            )
+        return exercise_prescriptions, timing_qualifier
 
-    def _exercise_prescription_from_name(self, exercise_name: str) -> ExercisePrescription:
+    def _exercise_prescription_from_name(
+        self, exercise_text: str
+    ) -> ExercisePrescription:
         if self.exercise_repository is None:
             return ExercisePrescription(
-                exercise=Exercise(name=exercise_name),
-                source_name=exercise_name,
+                exercise=Exercise(name=exercise_text),
+                source_name=exercise_text,
             )
 
-        if hasattr(self.exercise_repository, "get_or_create_exercise"):
-            return ExercisePrescription(
-                exercise=self.exercise_repository.get_or_create_exercise(
-                    exercise_name),
-                source_name=exercise_name,
-                prescribed_equipment=(
-                    self.exercise_repository.prescribed_equipment_from_name(
-                        exercise_name)
-                ),
-            )
-
-        exercise = self.exercise_repository.get_exercise_by_name(exercise_name)
+        equipment, exercise = self.exercise_repository.get_or_create_exercise_from_text(
+            exercise_text
+        )
         return ExercisePrescription(
-            exercise=exercise or Exercise(name=exercise_name),
-            source_name=exercise_name,
+            exercise=exercise,
+            source_name=exercise_text,
+            prescribed_equipment=equipment,
         )
 
     def _extract_timing_qualifier(
@@ -303,8 +302,7 @@ class WorkoutBuilder:
         qualifier = None
 
         if re.search(r"\bygig\b", clean_name, flags=re.IGNORECASE):
-            clean_name = re.sub(r"\bygig\b", "", clean_name,
-                                flags=re.IGNORECASE)
+            clean_name = re.sub(r"\bygig\b", "", clean_name, flags=re.IGNORECASE)
             qualifier = TimingQualifier.YOU_GO_I_GO
 
         return self._normalize_spaces(clean_name), qualifier
@@ -339,16 +337,17 @@ class WorkoutBuilder:
             )
 
         work_match = re.search(
-            r"(\d+)\s*(?:\"|s|sec|seconds?)?\s*work", normalized)  # e.g. '30" work'
+            r"(\d+)\s*(?:\"|s|sec|seconds?)?\s*work", normalized
+        )  # e.g. '30" work'
         rest_match = re.search(
-            r"(\d+)\s*(?:\"|s|sec|seconds?)?\s*rest", normalized)  # e.g. '30" rest'
+            r"(\d+)\s*(?:\"|s|sec|seconds?)?\s*rest", normalized
+        )  # e.g. '30" rest'
         if not work_match:
             return None
 
         return SetTiming(
             work_duration_seconds=int(work_match.group(1)),
-            rest_duration_seconds=int(
-                rest_match.group(1)) if rest_match else 0,
+            rest_duration_seconds=int(rest_match.group(1)) if rest_match else 0,
         )
 
     def _timing_for(
@@ -364,8 +363,9 @@ class WorkoutBuilder:
             for rule in timing_rules
             if self._rule_matches(rule, pod_index, lap_index, set_index)
         ]
-        rule = max(matching_rules,
-                   key=self._rule_specificity) if matching_rules else None
+        rule = (
+            max(matching_rules, key=self._rule_specificity) if matching_rules else None
+        )
         timing = rule["timing"] if rule else self.DEFAULT_TIMING
         if qualifier and timing.timing_qualifier is None:
             return replace(timing, timing_qualifier=qualifier)
@@ -400,8 +400,9 @@ class WorkoutBuilder:
             if rule["set_repetitions"]
             and self._rule_matches(rule, pod_index, lap_index, set_index)
         ]
-        rule = max(matching_rules,
-                   key=self._rule_specificity) if matching_rules else None
+        rule = (
+            max(matching_rules, key=self._rule_specificity) if matching_rules else None
+        )
         return rule["set_repetitions"] if rule else 1
 
     def _parse_scope(self, pattern: re.Pattern, text: str) -> set[int]:
@@ -411,8 +412,7 @@ class WorkoutBuilder:
         return {int(value) for value in re.findall(r"\d+", match.group(1))}
 
     def _parse_trailing_count(self, label_pattern: str, text: str) -> int | None:
-        match = re.search(
-            rf"\b(\d+)\s+{label_pattern}\b", text, flags=re.IGNORECASE)
+        match = re.search(rf"\b(\d+)\s+{label_pattern}\b", text, flags=re.IGNORECASE)
         return int(match.group(1)) if match else None
 
     def _compress_laps(self, laps: list[Lap]) -> list[Lap]:
@@ -456,8 +456,7 @@ class WorkoutBuilder:
 
 def _format_timing(timing: SetTiming) -> str:
     timing_text = (
-        f"{timing.work_duration_seconds}s work / "
-        f"{timing.rest_duration_seconds}s rest"
+        f"{timing.work_duration_seconds}s work / {timing.rest_duration_seconds}s rest"
     )
     if timing.timing_qualifier:
         timing_text += f" ({timing.timing_qualifier.value})"
@@ -471,13 +470,8 @@ def _print_workout(workout: Workout) -> None:
     for pod_number, pod in enumerate(workout.pods, start=1):
         print(f"  Pod {pod_number}: {len(pod.laps)} lap pattern(s)")
         for lap_number, lap in enumerate(pod.laps, start=1):
-            lap_suffix = (
-                f" x{lap.repetitions}" if lap.repetitions > 1 else ""
-            )
-            print(
-                f"    Lap {lap_number}{lap_suffix}: "
-                f"{len(lap.stations)} station(s)"
-            )
+            lap_suffix = f" x{lap.repetitions}" if lap.repetitions > 1 else ""
+            print(f"    Lap {lap_number}{lap_suffix}: {len(lap.stations)} station(s)")
             for station_number, station in enumerate(lap.stations, start=1):
                 print(
                     f"      Station {station_number}: "
@@ -513,8 +507,7 @@ def main() -> None:
     file_text = input_file.read_text(encoding="utf-8")
 
     parsed_workouts = WorkoutTextParser().parse(file_text)
-    workouts = [WorkoutBuilder().build_workout(workout)
-                for workout in parsed_workouts]
+    workouts = [WorkoutBuilder().build_workout(workout) for workout in parsed_workouts]
 
     print(f"Built {len(workouts)} workout(s) from {input_file}.\n")
     for workout in workouts:

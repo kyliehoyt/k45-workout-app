@@ -1,6 +1,6 @@
 {
   "name": "box",
-  "source_names": [
+  "source_texts": [
     "plyo box reverse lunge",
     "agility box lateral run with tap",
     "soft box plate reverse fly",
@@ -8,8 +8,14 @@
     "soft box jump",
     "soft box eccentric step down",
     "soft box step ups ygig",
+    "ybell soft box step ups",
+    "dumbbell step trainer bulgarian pulse",
+    "kettlebell softbox bent over row",
     "soft box explosive step ups",
+    "dumbbell step trainer chest fly",
+    "deadball step trainer bear hug bulgarian",
     "agility box hurdle forward hurdle jump + back pedal",
-    "soft box explosive step ups partnered"
+    "soft box explosive step ups partnered",
+    "dumbbell soft box step over"
   ]
 }

@@ -1,6 +1,12 @@
 {
   "name": "bench",
-  "source_names": [
+  "source_texts": [
+    "dumbbell bench incline pull",
+    "dumbbell bench seated alternate shoulder press",
+    "dumbbell bench incline chest press",
+    "dumbbell flat bench alternate chest press",
+    "dumbbell flat bench press neutral grip",
+    "dumbbell flat bench press",
     "4x bench hop + burpee ygig"
   ]
 }

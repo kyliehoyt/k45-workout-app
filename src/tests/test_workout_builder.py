@@ -1,15 +1,10 @@
-from data_acquisition.models.exercise import Exercise
 from data_acquisition.models.set_timing import SetTiming, TimingQualifier
-from data_acquisition.models.workout import WorkoutCategory
 from data_acquisition.workout_builder import WorkoutBuilder
 from data_acquisition.workout_text_parser import ParsedWorkout
 
 
 def exercise_names(exercise_set):
-    return [
-        prescription.exercise.name
-        for prescription in exercise_set.exercises
-    ]
+    return [prescription.exercise.name for prescription in exercise_set.exercises]
 
 
 def test_uniform_laps_are_compressed_into_repetitions():
@@ -21,8 +16,7 @@ def test_uniform_laps_are_compressed_into_repetitions():
             sets="1",
             laps="3",
             timing=['45" work 0" rest'],
-            exercises=[
-                f"{number}. exercise {number}" for number in range(1, 17)],
+            exercises=[f"{number}. exercise {number}" for number in range(1, 17)],
         )
     )
 
@@ -30,8 +24,7 @@ def test_uniform_laps_are_compressed_into_repetitions():
     assert len(workout.pods[0].laps) == 1
     assert workout.pods[0].laps[0].repetitions == 3
     assert len(workout.pods[0].laps[0].stations) == 4
-    assert workout.pods[0].laps[0].stations[0].sets[0].timing == SetTiming(
-        45, 0)
+    assert workout.pods[0].laps[0].stations[0].sets[0].timing == SetTiming(45, 0)
 
 
 def test_uniform_sets_are_compressed_into_repetitions():

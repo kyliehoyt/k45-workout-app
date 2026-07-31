@@ -19,13 +19,8 @@ workout_data = {
                             "sets": [
                                 {
                                     "repetitions": 4,
-                                    "exercises": [
-                                        "tricep kickbacks"
-                                    ],
-                                    "timing": {
-                                        "work_seconds": 35,
-                                        "rest_seconds": 25
-                                    }
+                                    "exercises": ["tricep kickbacks"],
+                                    "timing": {"work_seconds": 35, "rest_seconds": 25},
                                 }
                             ]
                         }
@@ -43,21 +38,21 @@ workout_data = {
                                 {
                                     "exercises": [
                                         "dumbbell bench incline pull",
-                                        "olympic barbell front squat"
+                                        "olympic barbell front squat",
                                     ],
                                     "timing": {
                                         "work_seconds": 705,
                                         "rest_seconds": 0,
-                                        "qualifier": "11:45"
-                                    }
+                                        "qualifier": "11:45",
+                                    },
                                 }
                             ]
                         }
-                    ]
+                    ],
                 }
             ]
-        }
-    ]
+        },
+    ],
 }
 
 workout_dict = {
@@ -71,13 +66,8 @@ workout_dict = {
                             "sets": [
                                 {
                                     "repetitions": 4,
-                                    "exercises": [
-                                        "tricep kickbacks"
-                                    ],
-                                    "timing": {
-                                        "work_seconds": 35,
-                                        "rest_seconds": 25
-                                    }
+                                    "exercises": ["tricep kickbacks"],
+                                    "timing": {"work_seconds": 35, "rest_seconds": 25},
                                 }
                             ]
                         }
@@ -95,21 +85,21 @@ workout_dict = {
                                 {
                                     "exercises": [
                                         "dumbbell bench incline pull",
-                                        "olympic barbell front squat"
+                                        "olympic barbell front squat",
                                     ],
                                     "timing": {
                                         "work_seconds": 705,
                                         "rest_seconds": 0,
-                                        "qualifier": "11:45"
-                                    }
+                                        "qualifier": "11:45",
+                                    },
                                 }
                             ]
                         }
-                    ]
+                    ],
                 }
             ]
-        }
-    ]
+        },
+    ],
 }
 
 
@@ -119,8 +109,7 @@ def test_source_dir_not_found():
         Adapter("non_existent_directory")
         assert False, "Expected ValueError was not raised."
     except ValueError as e:
-        assert str(
-            e) == "Source directory does not exist or is not a directory."
+        assert str(e) == "Source directory does not exist or is not a directory."
 
 
 def test_workout_dir_not_found(tmp_path):
@@ -129,8 +118,7 @@ def test_workout_dir_not_found(tmp_path):
         Adapter(tmp_path)
         assert False, "Expected ValueError was not raised."
     except ValueError as e:
-        assert str(
-            e) == "Workouts directory does not exist or is not a directory."
+        assert str(e) == "Workouts directory does not exist or is not a directory."
 
 
 def test_exercise_dir_not_found(tmp_path):
@@ -140,8 +128,7 @@ def test_exercise_dir_not_found(tmp_path):
         Adapter(tmp_path)
         assert False, "Expected ValueError was not raised."
     except ValueError as e:
-        assert str(
-            e) == "Exercises directory does not exist or is not a directory."
+        assert str(e) == "Exercises directory does not exist or is not a directory."
 
 
 def test_equipment_dir_not_found(tmp_path):
@@ -152,8 +139,7 @@ def test_equipment_dir_not_found(tmp_path):
         Adapter(tmp_path)
         assert False, "Expected ValueError was not raised."
     except ValueError as e:
-        assert str(
-            e) == "Equipment directory does not exist or is not a directory."
+        assert str(e) == "Equipment directory does not exist or is not a directory."
 
 
 def test_workout_data_source_initialized(tmp_path):
@@ -189,20 +175,49 @@ def test_workout_dict_from_json(tmp_path):
     assert len(workout_dict["pods"][0]["laps"]) == 1
     assert len(workout_dict["pods"][0]["laps"][0]["stations"]) == 1
     assert len(workout_dict["pods"][0]["laps"][0]["stations"][0]["sets"]) == 1
-    assert workout_dict["pods"][0]["laps"][0]["stations"][0]["sets"][0]["repetitions"] == 4
-    assert workout_dict["pods"][0]["laps"][0]["stations"][0]["sets"][0]["exercises"] == [
-        "tricep kickbacks"]
-    assert workout_dict["pods"][0]["laps"][0]["stations"][0]["sets"][0]["timing"]["work_seconds"] == 35
-    assert workout_dict["pods"][0]["laps"][0]["stations"][0]["sets"][0]["timing"]["rest_seconds"] == 25
+    assert (
+        workout_dict["pods"][0]["laps"][0]["stations"][0]["sets"][0]["repetitions"] == 4
+    )
+    assert workout_dict["pods"][0]["laps"][0]["stations"][0]["sets"][0][
+        "exercises"
+    ] == ["tricep kickbacks"]
+    assert (
+        workout_dict["pods"][0]["laps"][0]["stations"][0]["sets"][0]["timing"][
+            "work_seconds"
+        ]
+        == 35
+    )
+    assert (
+        workout_dict["pods"][0]["laps"][0]["stations"][0]["sets"][0]["timing"][
+            "rest_seconds"
+        ]
+        == 25
+    )
     assert len(workout_dict["pods"][1]["laps"]) == 1
     assert len(workout_dict["pods"][1]["laps"][0]["stations"]) == 1
     assert workout_dict["pods"][1]["laps"][0]["repetitions"] == 2
     assert len(workout_dict["pods"][1]["laps"][0]["stations"][0]["sets"]) == 1
-    assert workout_dict["pods"][1]["laps"][0]["stations"][0]["sets"][0]["exercises"] == [
-        "dumbbell bench incline pull", "olympic barbell front squat"]
-    assert workout_dict["pods"][1]["laps"][0]["stations"][0]["sets"][0]["timing"]["work_seconds"] == 705
-    assert workout_dict["pods"][1]["laps"][0]["stations"][0]["sets"][0]["timing"]["rest_seconds"] == 0
-    assert workout_dict["pods"][1]["laps"][0]["stations"][0]["sets"][0]["timing"]["qualifier"] == "11:45"
+    assert workout_dict["pods"][1]["laps"][0]["stations"][0]["sets"][0][
+        "exercises"
+    ] == ["dumbbell bench incline pull", "olympic barbell front squat"]
+    assert (
+        workout_dict["pods"][1]["laps"][0]["stations"][0]["sets"][0]["timing"][
+            "work_seconds"
+        ]
+        == 705
+    )
+    assert (
+        workout_dict["pods"][1]["laps"][0]["stations"][0]["sets"][0]["timing"][
+            "rest_seconds"
+        ]
+        == 0
+    )
+    assert (
+        workout_dict["pods"][1]["laps"][0]["stations"][0]["sets"][0]["timing"][
+            "qualifier"
+        ]
+        == "11:45"
+    )
 
 
 def test_workout_dict_from_json_file_not_found(tmp_path):
@@ -236,10 +251,7 @@ def initialize_adapter_with_valid_directories(tmp_path):
 
 def exercise_names(exercise_set):
     """Return canonical exercise names for an ExerciseSet."""
-    return [
-        prescription.exercise.name
-        for prescription in exercise_set.exercises
-    ]
+    return [prescription.exercise.name for prescription in exercise_set.exercises]
 
 
 def test_workout_from_dict(tmp_path):
@@ -254,14 +266,21 @@ def test_workout_from_dict(tmp_path):
     assert len(workout.pods[0].laps[0].stations[0].sets) == 1
     assert workout.pods[0].laps[0].stations[0].sets[0].repetitions == 4
     assert exercise_names(workout.pods[0].laps[0].stations[0].sets[0]) == [
-        "tricep kickbacks"]
+        "tricep kickbacks"
+    ]
     assert workout.pods[0].laps[0].stations[0].sets[0].timing == SetTiming(
-        work_duration_seconds=35, rest_duration_seconds=25)
+        work_duration_seconds=35, rest_duration_seconds=25
+    )
     assert len(workout.pods[1].laps) == 1
     assert len(workout.pods[1].laps[0].stations) == 1
     assert workout.pods[1].laps[0].repetitions == 2
     assert len(workout.pods[1].laps[0].stations[0].sets) == 1
     assert exercise_names(workout.pods[1].laps[0].stations[0].sets[0]) == [
-        "dumbbell bench incline pull", "olympic barbell front squat"]
+        "dumbbell bench incline pull",
+        "olympic barbell front squat",
+    ]
     assert workout.pods[1].laps[0].stations[0].sets[0].timing == SetTiming(
-        work_duration_seconds=705, rest_duration_seconds=0, timing_qualifier=TimingQualifier("11:45"))
+        work_duration_seconds=705,
+        rest_duration_seconds=0,
+        timing_qualifier=TimingQualifier("11:45"),
+    )
