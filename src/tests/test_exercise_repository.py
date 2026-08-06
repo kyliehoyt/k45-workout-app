@@ -13,8 +13,7 @@ from data_acquisition.workout_text_parser import ParsedWorkout
 def test_repository_omits_leading_resistance_equipment_from_exercise_name(tmp_path):
     exercise_path, repository = _create_exercise_repository(tmp_path)
 
-    equipment, exercise = repository.get_or_create_exercise_from_text(
-        "dumbbell rdl")
+    equipment, exercise = repository.get_or_create_exercise_from_text("dumbbell rdl")
 
     assert exercise == Exercise(name="rdl")
     assert equipment == [EquipmentOption(option=Equipment("dumbbell"))]
@@ -28,8 +27,7 @@ def test_repository_merges_equipment_variants_into_one_canonical_exercise(tmp_pa
 
     assert exercise.name == "rdl"
 
-    exercise_dict = json.loads(
-        (exercise_path / "rdl.json").read_text(encoding="utf-8"))
+    exercise_dict = json.loads((exercise_path / "rdl.json").read_text(encoding="utf-8"))
     assert exercise_dict["source_texts"] == ["dumbbell rdl", "barbell rdl"]
     assert "required_equipment" not in exercise_dict
 
@@ -83,7 +81,7 @@ def test_builder_gets_or_creates_repository_exercises(tmp_path):
 
     prescription = workout.pods[0].laps[0].stations[0].sets[0].exercises[0]
     assert prescription.exercise == Exercise(name="front squat")
-    assert prescription.source_name == "barbell front squat"
+    assert prescription.source_text == "barbell front squat"
     assert prescription.prescribed_equipment == [
         EquipmentOption(
             option=Equipment("barbell"),

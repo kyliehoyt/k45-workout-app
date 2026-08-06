@@ -559,7 +559,7 @@ set 4: 35” work 30” rest.
 
 7. dumbbell single arm push press 5 each side
 
-8. olympic abrbell pendlay row
+8. olympic barbell pendlay row
 
 9. kettlebell suitcase squat
 
@@ -699,7 +699,7 @@ Set 2: 45” work 20” rest
 4. revo squat jump
 
 
-5. dumbbel lrdl
+5. dumbbell rdl
 
 
 6. dumbbell overhead swing + push press

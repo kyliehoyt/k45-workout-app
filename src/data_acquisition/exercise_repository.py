@@ -30,8 +30,7 @@ class ExerciseRepository:
     ) -> tuple[list[EquipmentOption], Exercise] | None:
         """Return an existing exercise or create one from a raw exercise text."""
         equipment_options, exercise_only_text = (
-            self.equipment_repository.get_or_create_equipment_from_text(
-                exercise_text)
+            self.equipment_repository.get_or_create_equipment_from_text(exercise_text)
         )
         clean_name = self._clean_exercise_text(exercise_only_text)
 
@@ -66,8 +65,7 @@ class ExerciseRepository:
             for numbered_exercise in workout.exercises:
                 match = self.NUMBERED_EXERCISE_PATTERN.match(numbered_exercise)
                 if match:
-                    _, exercise = self.get_or_create_exercise_from_text(
-                        match.group(1))
+                    _, exercise = self.get_or_create_exercise_from_text(match.group(1))
                     if exercise:
                         exercises.append(exercise)
                     else:
@@ -136,8 +134,7 @@ def main() -> None:
     input_file = Path(args.input_file)
     raw_text = input_file.read_text(encoding="utf-8")
     repository = ExerciseRepository(
-        args.exercise_dir, equipment_repository=EquipmentRepository(
-            args.equipment_dir)
+        args.exercise_dir, equipment_repository=EquipmentRepository(args.equipment_dir)
     )
     exercises = repository.seed_from_raw_text(raw_text)
 

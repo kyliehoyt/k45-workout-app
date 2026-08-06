@@ -31,7 +31,7 @@ class ExercisePrescription:
     """
 
     exercise: Exercise
-    source_name: str = ""
+    source_text: str = ""
     prescribed_equipment: list[EquipmentOption] = field(default_factory=list)
 
 

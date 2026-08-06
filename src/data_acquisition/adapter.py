@@ -95,7 +95,7 @@ class Adapter:
             exercises=[
                 ExercisePrescription(
                     exercise=Exercise(name=exercise),
-                    source_name=exercise,
+                    source_text=exercise,
                 )
                 for exercise in exercise_set_dict["exercises"]
             ],

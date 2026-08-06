@@ -5,6 +5,8 @@ from dataclasses import replace
 from pathlib import Path
 import re
 
+from data_acquisition.equipment_repository import EquipmentRepository
+from data_acquisition.exercise_repository import ExerciseRepository
 from data_acquisition.models.exercise import Exercise
 from data_acquisition.models.set_timing import SetTiming, TimingQualifier
 from data_acquisition.models.workout import (
@@ -124,8 +126,8 @@ class WorkoutBuilder:
     ) -> Station:
         sets = []
         for set_index in range(1, set_count + 1):
-            exercise_names = station_group[min(set_index - 1, len(station_group) - 1)]
-            exercises, qualifier = self._build_exercises(exercise_names)
+            exercise_texts = station_group[min(set_index - 1, len(station_group) - 1)]
+            exercises, qualifier = self._build_exercises(exercise_texts)
             timing = self._timing_for(
                 timing_rules=timing_rules,
                 pod_index=pod_index,
@@ -150,60 +152,72 @@ class WorkoutBuilder:
 
     def _build_station_exercise_groups(
         self,
-        numbered_exercises: list[str],
+        numbered_exercise_texts: list[str],
         station_count: int,
         set_count: int,
         sets_text: str,
+        # list of stations, each with a list of sets, each with a list of exercise texts
     ) -> list[list[list[str]]]:
-        exercises_by_number = self._exercise_names_by_number(numbered_exercises)
-        if self._uses_repeated_numbered_options(exercises_by_number, station_count):
+        exercise_texts_by_number = self._exercise_text_by_number(
+            numbered_exercise_texts
+        )
+        if self._uses_repeated_numbered_options(
+            exercise_texts_by_number, station_count
+        ):
+            # exercises are given as two lists: 1, 2, 3, 4, 1, 2, 3, 4
+            # where each station has multiple exercise options
             return [
-                [[name for name in exercises_by_number[number]]]
-                for number in sorted(exercises_by_number)
+                [list(exercise_texts_by_number[number])]
+                for number in sorted(exercise_texts_by_number)
             ]
 
-        exercise_names = [
-            name
-            for number in sorted(exercises_by_number)
-            for name in exercises_by_number[number]
+        exercise_texts = [  # texts in order of their numbers, flattened into a single list
+            text
+            for number in sorted(exercise_texts_by_number)
+            for text in exercise_texts_by_number[number]
         ]
         if self._uses_sequential_station_sets(
-            exercise_count=len(exercise_names),
+            exercise_count=len(exercise_texts),
             station_count=station_count,
             set_count=set_count,
             sets_text=sets_text,
         ):
+            # exercises are implicitly given as activation + main exercise pairs: 1, 2, 3, 4, 5, 6,
+            # where each station has an activation exercise (e.g. 1) and a main exercise (e.g. 2)
             groups = []
-            for index in range(0, len(exercise_names), 2):
-                activation = exercise_names[index]
-                main = exercise_names[index + 1]
-                groups.append([[activation], [main]])
+            for index in range(0, len(exercise_texts), 2):
+                activation_exercise_text = exercise_texts[index]
+                main_exercise_text = exercise_texts[index + 1]
+                groups.append([[activation_exercise_text], [main_exercise_text]])
             return groups
 
-        return [[[name]] for name in exercise_names[:station_count]]
+        # exercises are given as a single list of exercises, one per station
+        return [[[text]] for text in exercise_texts[:station_count]]
 
-    def _exercise_names_by_number(
-        self, numbered_exercises: list[str]
+    def _exercise_text_by_number(
+        self, numbered_exercise_texts: list[str]
     ) -> dict[int, list[str]]:
-        exercises_by_number: dict[int, list[str]] = {}
-        for text in numbered_exercises:
+        exercise_texts_by_number: dict[int, list[str]] = {}
+        for text in numbered_exercise_texts:
             match = self.EXERCISE_PATTERN.match(text)
             if not match:
                 continue
             number = int(match.group(1))
-            exercise_name = match.group(2).strip()
-            exercises_by_number.setdefault(number, []).append(exercise_name)
-        return exercises_by_number
+            exercise_text = match.group(2).strip()
+            exercise_texts_by_number.setdefault(number, []).append(exercise_text)
+        return exercise_texts_by_number
 
     def _uses_repeated_numbered_options(
         self,
-        exercises_by_number: dict[int, list[str]],
+        exercise_texts_by_number: dict[int, list[str]],
         station_count: int,
     ) -> bool:
         return (
-            bool(exercises_by_number)
-            and max(exercises_by_number) == station_count
-            and any(len(names) > 1 for names in exercises_by_number.values())
+            bool(exercise_texts_by_number)  # any exercises found
+            # the highest numbered exercise matches the station count
+            and max(exercise_texts_by_number) == station_count
+            # any number has multiple exercises
+            and any(len(text) > 1 for text in exercise_texts_by_number.values())
         )
 
     def _uses_sequential_station_sets(
@@ -272,17 +286,17 @@ class WorkoutBuilder:
             )
             timing_qualifier = timing_qualifier or qualifier
             exercise_prescriptions.append(
-                self._exercise_prescription_from_name(equipment_and_exercise)
+                self._exercise_prescription_from_text(equipment_and_exercise)
             )
         return exercise_prescriptions, timing_qualifier
 
-    def _exercise_prescription_from_name(
+    def _exercise_prescription_from_text(
         self, exercise_text: str
     ) -> ExercisePrescription:
         if self.exercise_repository is None:
             return ExercisePrescription(
                 exercise=Exercise(name=exercise_text),
-                source_name=exercise_text,
+                source_text=exercise_text,
             )
 
         equipment, exercise = self.exercise_repository.get_or_create_exercise_from_text(
@@ -290,7 +304,7 @@ class WorkoutBuilder:
         )
         return ExercisePrescription(
             exercise=exercise,
-            source_name=exercise_text,
+            source_text=exercise_text,
             prescribed_equipment=equipment,
         )
 
@@ -483,13 +497,29 @@ def _print_workout(workout: Workout) -> None:
                         if exercise_set.repetitions > 1
                         else ""
                     )
-                    exercise_names = ", ".join(
-                        exercise.exercise.name for exercise in exercise_set.exercises
+                    exercise_names = " OR ".join(
+                        exercise_prescription.exercise.name
+                        for exercise_prescription in exercise_set.exercises
+                    )
+                    equipment_names = []
+                    for exercise_prescription in exercise_set.exercises:
+                        if exercise_prescription.prescribed_equipment:
+                            for (
+                                equipment_option
+                            ) in exercise_prescription.prescribed_equipment:
+                                if equipment_option.option:
+                                    equipment_names.append(equipment_option.option.name)
+
+                    unique_equipment = set(equipment_names)
+                    unique_equipment_str = (
+                        ", ".join(unique_equipment) if unique_equipment else ""
                     )
                     print(
                         f"        Set {set_number}{set_suffix}: "
                         f"{_format_timing(exercise_set.timing)} | {exercise_names}"
+                        f"{' | ' + unique_equipment_str if unique_equipment_str else ''}"
                     )
+
     print()
 
 
@@ -501,13 +531,29 @@ def main() -> None:
         description="Parse a raw workout text file and print built Workout models."
     )
     parser.add_argument("input_file", help="Path to the raw workout text file")
+    parser.add_argument(
+        "--exercise-dir",
+        default=Path("src") / "data" / "exercises",
+        help="Directory where exercise JSON files are stored",
+    )
+    parser.add_argument(
+        "--equipment-dir",
+        default=Path("src") / "data" / "equipment",
+        help="Directory where equipment JSON files are stored",
+    )
     args = parser.parse_args()
 
     input_file = Path(args.input_file)
     file_text = input_file.read_text(encoding="utf-8")
 
     parsed_workouts = WorkoutTextParser().parse(file_text)
-    workouts = [WorkoutBuilder().build_workout(workout) for workout in parsed_workouts]
+    exercise_repository = ExerciseRepository(
+        args.exercise_dir, EquipmentRepository(args.equipment_dir)
+    )
+    workouts = [
+        WorkoutBuilder(exercise_repository).build_workout(workout)
+        for workout in parsed_workouts
+    ]
 
     print(f"Built {len(workouts)} workout(s) from {input_file}.\n")
     for workout in workouts:

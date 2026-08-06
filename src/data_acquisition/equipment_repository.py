@@ -13,170 +13,204 @@ from data_acquisition.models.equipment import Equipment, EquipmentOption
 from data_acquisition.workout_text_parser import WorkoutTextParser
 
 
+class CanonicalEquipmentDesc(NamedTuple):
+    """A canonical name for a piece of equipment
+    @property canonical_name: The canonical name for the equipment
+    @property is_structural_equipment: True if the equipment is structural (e.g., a bar)
+    @property is_exercise: True if the equipment is also an exercise (e.g., ski erg)
+    """
+
+    canonical_name: str
+    is_structural_equipment: bool = False
+    is_exercise: bool = False
+
+
+class CanonicalEquipment(Enum):
+    """Canonical names for equipment and whether they are structural equipment."""
+
+    BAND = CanonicalEquipmentDesc(
+        canonical_name="band", is_structural_equipment=False)
+    BALANCE_TRAINER = CanonicalEquipmentDesc(
+        canonical_name="balance trainer", is_structural_equipment=False
+    )
+    BARBELL = CanonicalEquipmentDesc(
+        canonical_name="barbell", is_structural_equipment=False
+    )
+    BAR = CanonicalEquipmentDesc(
+        canonical_name="bar", is_structural_equipment=True, is_exercise=True
+    )
+    BATTLE_ROPES = CanonicalEquipmentDesc(
+        canonical_name="battle ropes", is_structural_equipment=True, is_exercise=True
+    )
+    BIKE_ERG = CanonicalEquipmentDesc(
+        canonical_name="bike erg", is_structural_equipment=True
+    )
+    BOX = CanonicalEquipmentDesc(
+        canonical_name="box", is_structural_equipment=True)
+    BENCH = CanonicalEquipmentDesc(
+        canonical_name="bench", is_structural_equipment=False
+    )
+    DEADBALL = CanonicalEquipmentDesc(
+        canonical_name="deadball", is_structural_equipment=False
+    )
+    DUMBBELL = CanonicalEquipmentDesc(
+        canonical_name="dumbbell", is_structural_equipment=False
+    )
+    KETTLEBELL = CanonicalEquipmentDesc(
+        canonical_name="kettlebell", is_structural_equipment=False
+    )
+    LANDMINE = CanonicalEquipmentDesc(
+        canonical_name="landmine", is_structural_equipment=True
+    )
+    PLATE = CanonicalEquipmentDesc(
+        canonical_name="plate", is_structural_equipment=False
+    )
+    REVO_BAR = CanonicalEquipmentDesc(
+        canonical_name="revo bar", is_structural_equipment=False
+    )
+    ROW_ERG = CanonicalEquipmentDesc(
+        canonical_name="row erg", is_structural_equipment=True
+    )
+    SANDBAG = CanonicalEquipmentDesc(
+        canonical_name="sandbag", is_structural_equipment=False
+    )
+    SKI_ERG = CanonicalEquipmentDesc(
+        canonical_name="ski erg", is_structural_equipment=True
+    )
+    SLED = CanonicalEquipmentDesc(
+        canonical_name="sled", is_structural_equipment=True)
+    SLIDES = CanonicalEquipmentDesc(
+        canonical_name="slides", is_structural_equipment=True
+    )
+    SUSPENSION_TRAINER = CanonicalEquipmentDesc(
+        canonical_name="TRX straps", is_structural_equipment=True
+    )
+    YBELL = CanonicalEquipmentDesc(
+        canonical_name="ybell", is_structural_equipment=False
+    )
+
+    @classmethod
+    def to_dict(cls) -> dict:
+        """Return a dictionary mapping canonical names to CanonicalEquipmentDesc objects."""
+        return {equipment.value.canonical_name: equipment.value for equipment in cls}
+
+    @classmethod
+    def equipment_substitutions(cls) -> dict[str, list[str]]:
+        """Return a dictionary mapping canonical equipment names to
+        a list of substitute canonical equipment names."""
+        return {
+            # independent, two hand, center grip
+            CanonicalEquipment.BAND.name: [
+                CanonicalEquipment.DUMBBELL.name,
+                CanonicalEquipment.YBELL.name,
+            ],
+            # coordinated, two hand, center grip, pull
+            CanonicalEquipment.BAR.name: [CanonicalEquipment.BAND.name],
+            # coordinated, two hand, center grip
+            CanonicalEquipment.BARBELL.name: [
+                CanonicalEquipment.DUMBBELL.name,
+                CanonicalEquipment.YBELL.name,
+                CanonicalEquipment.SANDBAG.name,
+                CanonicalEquipment.REVO_BAR.name,
+            ],
+            # unstable surface
+            CanonicalEquipment.BALANCE_TRAINER.name: [
+                CanonicalEquipment.BOX.name,
+                CanonicalEquipment.BENCH.name,
+            ],
+            # stable surface
+            CanonicalEquipment.BOX.name: [
+                CanonicalEquipment.BENCH.name,
+                CanonicalEquipment.BALANCE_TRAINER.name,
+            ],
+            # stable surface
+            CanonicalEquipment.BENCH.name: [
+                CanonicalEquipment.BOX.name,
+                CanonicalEquipment.BALANCE_TRAINER.name,
+            ],
+            # coordinated, two hand, outer grip
+            CanonicalEquipment.DEADBALL.name: [
+                CanonicalEquipment.SANDBAG.name,
+                CanonicalEquipment.DUMBBELL.name,
+                CanonicalEquipment.YBELL.name,
+                CanonicalEquipment.KETTLEBELL.name,
+                CanonicalEquipment.PLATE.name,
+            ],
+            # independent/coordinated, single/two hand, outer grip
+            CanonicalEquipment.KETTLEBELL.name: [
+                CanonicalEquipment.YBELL.name,
+                CanonicalEquipment.DUMBBELL.name,
+                CanonicalEquipment.SANDBAG.name,
+                CanonicalEquipment.PLATE.name,
+            ],
+            # coordinated, single/two hand, outer grip
+            CanonicalEquipment.LANDMINE.name: [
+                CanonicalEquipment.BARBELL.name,
+                CanonicalEquipment.PLATE.name,
+            ],
+            # coordinated, two hand, center grip
+            CanonicalEquipment.REVO_BAR.name: [
+                CanonicalEquipment.BARBELL.name,
+                CanonicalEquipment.DUMBBELL.name,
+                CanonicalEquipment.YBELL.name,
+                CanonicalEquipment.SANDBAG.name,
+            ],
+            # coordinated, two hand, outer grip
+            CanonicalEquipment.SANDBAG.name: [
+                CanonicalEquipment.PLATE.name,
+                CanonicalEquipment.BARBELL.name,
+                CanonicalEquipment.REVO_BAR.name,
+                CanonicalEquipment.KETTLEBELL.name,
+                CanonicalEquipment.DUMBBELL.name,
+                CanonicalEquipment.YBELL.name,
+            ],
+            # coordinated, two hand, outer grip
+            CanonicalEquipment.PLATE.name: [
+                CanonicalEquipment.SANDBAG.name,
+                CanonicalEquipment.DUMBBELL.name,
+                CanonicalEquipment.YBELL.name,
+                CanonicalEquipment.KETTLEBELL.name,
+            ],
+            # independent/coordinated, single/two hand, center/outer grip
+            CanonicalEquipment.YBELL.name: [
+                CanonicalEquipment.DUMBBELL.name,
+                CanonicalEquipment.KETTLEBELL.name,
+                CanonicalEquipment.SANDBAG.name,
+                CanonicalEquipment.PLATE.name,
+            ],
+        }
+
+
 class EquipmentRepository:
     """Store equipment options as JSON files keyed by normalized names."""
 
-    class CanonicalEquipment(Enum):
-        class EquipmentAlias(NamedTuple):
-            """A canonical name for a piece of equipment and whether it is a resistance equipment."""
-
-            canonical_name: str
-            is_structural_equipment: bool = False
-            is_exercise: bool = False
-
-        BAND = EquipmentAlias(canonical_name="band",
-                              is_structural_equipment=False)
-        BALANCE_TRAINER = EquipmentAlias(
-            canonical_name="balance trainer", is_structural_equipment=False
-        )
-        BARBELL = EquipmentAlias(
-            canonical_name="barbell", is_structural_equipment=False
-        )
-        BAR = EquipmentAlias(
-            canonical_name="bar", is_structural_equipment=True, is_exercise=True
-        )
-        BIKE_ERG = EquipmentAlias(
-            canonical_name="bike erg", is_structural_equipment=True
-        )
-        BOX = EquipmentAlias(canonical_name="box",
-                             is_structural_equipment=True)
-        BENCH = EquipmentAlias(canonical_name="bench",
-                               is_structural_equipment=False)
-        DEADBALL = EquipmentAlias(
-            canonical_name="deadball", is_structural_equipment=False
-        )
-        DUMBBELL = EquipmentAlias(
-            canonical_name="dumbbell", is_structural_equipment=False
-        )
-        KETTLEBELL = EquipmentAlias(
-            canonical_name="kettlebell", is_structural_equipment=False
-        )
-        PLATE = EquipmentAlias(canonical_name="plate",
-                               is_structural_equipment=False)
-        REVO_BAR = EquipmentAlias(
-            canonical_name="revo bar", is_structural_equipment=False
-        )
-        ROW_ERG = EquipmentAlias(
-            canonical_name="row erg", is_structural_equipment=True)
-        SANDBAG = EquipmentAlias(
-            canonical_name="sandbag", is_structural_equipment=False
-        )
-        SKI_ERG = EquipmentAlias(
-            canonical_name="ski erg", is_structural_equipment=True)
-        SUSPENSION_TRAINER = EquipmentAlias(
-            canonical_name="TRX straps", is_structural_equipment=True
-        )
-        YBELL = EquipmentAlias(canonical_name="ybell",
-                               is_structural_equipment=False)
-
+    # Aliases for equipment names to canonical equipment descriptions.
+    # Names of the canonical equipment themselves are added by the to_dict()
+    # method of CanonicalEquipment.
     EQUIPMENT_ALIASES = {
         "activation band": CanonicalEquipment.BAND.value,
         "agility box": CanonicalEquipment.BOX.value,
-        "barbell": CanonicalEquipment.BARBELL.value,
-        "balance trainer": CanonicalEquipment.BALANCE_TRAINER.value,
-        "bench": CanonicalEquipment.BENCH.value,
-        "bike erg": CanonicalEquipment.BIKE_ERG.value,
         "chin up": CanonicalEquipment.BAR.value,
-        "deadball": CanonicalEquipment.DEADBALL.value,
         "deadhang": CanonicalEquipment.BAR.value,
         "double kb": CanonicalEquipment.KETTLEBELL.value,
-        "dumbbell": CanonicalEquipment.DUMBBELL.value,
         "dumbbells": CanonicalEquipment.DUMBBELL.value,
         "flat bench": CanonicalEquipment.BENCH.value,
-        "kettlebell": CanonicalEquipment.KETTLEBELL.value,
+        "ghr": CanonicalEquipment.SLIDES.value,  # glute-hamstring-roller
+        "hyrox cruise": CanonicalEquipment.ROW_ERG.value,
+        "medicine ball": CanonicalEquipment.DEADBALL.value,
         "olympic barbell": CanonicalEquipment.BARBELL.value,
-        "plate": CanonicalEquipment.PLATE.value,
         "plyo box": CanonicalEquipment.BOX.value,
         "power band": CanonicalEquipment.BAND.value,
         "pull up": CanonicalEquipment.BAR.value,
         "revo": CanonicalEquipment.REVO_BAR.value,
-        "row erg": CanonicalEquipment.ROW_ERG.value,
-        "sandbag": CanonicalEquipment.SANDBAG.value,
+        "riser": CanonicalEquipment.BOX.value,
         "single kb": CanonicalEquipment.KETTLEBELL.value,
-        "ski erg": CanonicalEquipment.SKI_ERG.value,
         "soft box": CanonicalEquipment.BOX.value,
         "softbox": CanonicalEquipment.BOX.value,
         "step trainer": CanonicalEquipment.BOX.value,
         "suspension trainer": CanonicalEquipment.SUSPENSION_TRAINER.value,
-        "ybell": CanonicalEquipment.YBELL.value,
-    }
+    } | CanonicalEquipment.to_dict()
 
-    CANONICAL_EQUIPMENT_SUBSTITUTIONS = {
-        # independent, two hand, center grip
-        CanonicalEquipment.BAND.name: [
-            CanonicalEquipment.DUMBBELL.name,
-            CanonicalEquipment.YBELL.name,
-        ],
-        # coordinated, two hand, center grip, pull
-        CanonicalEquipment.BAR.name: [CanonicalEquipment.BAND.name],
-        # coordinated, two hand, center grip
-        CanonicalEquipment.BARBELL.name: [
-            CanonicalEquipment.DUMBBELL.name,
-            CanonicalEquipment.YBELL.name,
-            CanonicalEquipment.SANDBAG.name,
-            CanonicalEquipment.REVO_BAR.name,
-        ],
-        # unstable surface
-        CanonicalEquipment.BALANCE_TRAINER.name: [
-            CanonicalEquipment.BOX.name,
-            CanonicalEquipment.BENCH.name,
-        ],
-        # stable surface
-        CanonicalEquipment.BOX.name: [
-            CanonicalEquipment.BENCH.name,
-            CanonicalEquipment.BALANCE_TRAINER.name,
-        ],
-        # stable surface
-        CanonicalEquipment.BENCH.name: [
-            CanonicalEquipment.BOX.name,
-            CanonicalEquipment.BALANCE_TRAINER.name,
-        ],
-        # coordinated, two hand, outer grip
-        CanonicalEquipment.DEADBALL.name: [
-            CanonicalEquipment.SANDBAG.name,
-            CanonicalEquipment.DUMBBELL.name,
-            CanonicalEquipment.YBELL.name,
-            CanonicalEquipment.KETTLEBELL.name,
-            CanonicalEquipment.PLATE.name,
-        ],
-        # independent/coordinated, single/two hand, outer grip
-        CanonicalEquipment.KETTLEBELL.name: [
-            CanonicalEquipment.YBELL.name,
-            CanonicalEquipment.DUMBBELL.name,
-            CanonicalEquipment.SANDBAG.name,
-            CanonicalEquipment.PLATE.name,
-        ],
-        # coordinated, two hand, center grip
-        CanonicalEquipment.REVO_BAR.name: [
-            CanonicalEquipment.BARBELL.name,
-            CanonicalEquipment.DUMBBELL.name,
-            CanonicalEquipment.YBELL.name,
-            CanonicalEquipment.SANDBAG.name,
-        ],
-        # coordinated, two hand, outer grip
-        CanonicalEquipment.SANDBAG.name: [
-            CanonicalEquipment.PLATE.name,
-            CanonicalEquipment.BARBELL.name,
-            CanonicalEquipment.REVO_BAR.name,
-            CanonicalEquipment.KETTLEBELL.name,
-            CanonicalEquipment.DUMBBELL.name,
-            CanonicalEquipment.YBELL.name,
-        ],
-        # coordinated, two hand, outer grip
-        CanonicalEquipment.PLATE.name: [
-            CanonicalEquipment.SANDBAG.name,
-            CanonicalEquipment.DUMBBELL.name,
-            CanonicalEquipment.YBELL.name,
-            CanonicalEquipment.KETTLEBELL.name,
-        ],
-        # independent/coordinated, single/two hand, center/outer grip
-        CanonicalEquipment.YBELL.name: [
-            CanonicalEquipment.DUMBBELL.name,
-            CanonicalEquipment.KETTLEBELL.name,
-            CanonicalEquipment.SANDBAG.name,
-            CanonicalEquipment.PLATE.name,
-        ],
-    }
     EQUIPMENT_PATTERN = re.compile(
         rf"^({
             '|'.join(
@@ -282,7 +316,7 @@ class EquipmentRepository:
 
     def _get_equipment_substitutes(self, equipment_name: str) -> list[str]:
         """Return a list of substitute equipment names for the given equipment name."""
-        return self.CANONICAL_EQUIPMENT_SUBSTITUTIONS.get(equipment_name, [])
+        return CanonicalEquipment.equipment_substitutions().get(equipment_name, [])
 
     def _equipment_option_from_dict(self, equipment_dict: dict) -> EquipmentOption:
         return EquipmentOption(
