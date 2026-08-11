@@ -3,6 +3,7 @@ __pycache__/
 
 .venv/
 .ruff_cache/
+.idea
 
 .env
 .env.*
@@ -10,3 +11,8 @@ __pycache__/
 dist/
 build/
 *.egg-info/
+
+.gradle
+gradle/gradle-daemon-jvm.properties
+
+local.properties
