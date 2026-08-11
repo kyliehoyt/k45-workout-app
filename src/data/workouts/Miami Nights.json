@@ -1,0 +1,296 @@
+{
+    "name": "Miami Nights",
+    "import_date": "2026-08-10",
+    "pods": [
+        {
+            "laps": [
+                {
+                    "stations": [
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "box explosive step ups",
+                                            "source_text": "soft box explosive step ups",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "box"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 40,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "ski erg",
+                                            "source_text": "ski erg",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "ski erg"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 40,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "bike erg seated",
+                                            "source_text": "bike erg seated",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "bike erg"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 40,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "squat press",
+                                            "source_text": "barbell squat press",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "barbell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 40,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        }
+                    ],
+                    "repetitions": 3
+                }
+            ]
+        },
+        {
+            "laps": [
+                {
+                    "stations": [
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "double renegade row",
+                                            "source_text": "ybell double renegade row",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "ybell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 40,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "seated alternate shoulder press",
+                                            "source_text": "dumbbell bench seated alternate shoulder press",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "dumbbell"
+                                                },
+                                                {
+                                                    "name": "bench"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 40,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "rdl",
+                                            "source_text": "dumbbell rdl",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "dumbbell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 40,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "suitcase squat",
+                                            "source_text": "kettlebell suitcase squat",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "kettlebell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 40,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        }
+                    ],
+                    "repetitions": 3
+                }
+            ]
+        },
+        {
+            "laps": [
+                {
+                    "stations": [
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "speed sprawls",
+                                            "source_text": "speed sprawls",
+                                            "prescribed_equipment": []
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 40,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "plyo lunges",
+                                            "source_text": "plyo lunges",
+                                            "prescribed_equipment": []
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 40,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "bicycle ab crunch",
+                                            "source_text": "bicycle ab crunch",
+                                            "prescribed_equipment": []
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 40,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "push up jack",
+                                            "source_text": "push up jack",
+                                            "prescribed_equipment": []
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 40,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        }
+                    ],
+                    "repetitions": 3
+                }
+            ]
+        }
+    ]
+}

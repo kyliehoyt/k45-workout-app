@@ -1,0 +1,816 @@
+{
+    "name": "Track Stars",
+    "import_date": "2026-08-10",
+    "pods": [
+        {
+            "laps": [
+                {
+                    "stations": [
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "static lunge partner holds isometric lunge",
+                                            "source_text": "5x static lunge partner holds isometric lunge",
+                                            "prescribed_equipment": []
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 90,
+                                        "rest_duration_seconds": 10,
+                                        "timing_qualifier": "You Go, I Go"
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "devils press",
+                                            "source_text": "dumbbell devils press",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "dumbbell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 90,
+                                        "rest_duration_seconds": 10,
+                                        "timing_qualifier": "You Go, I Go"
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "box step ups",
+                                            "source_text": "soft box step ups",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "box"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 90,
+                                        "rest_duration_seconds": 10,
+                                        "timing_qualifier": "You Go, I Go"
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "good morning",
+                                            "source_text": "plate good morning",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "plate"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 90,
+                                        "rest_duration_seconds": 10,
+                                        "timing_qualifier": "You Go, I Go"
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "burpee hands off",
+                                            "source_text": "burpee hands off",
+                                            "prescribed_equipment": []
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 90,
+                                        "rest_duration_seconds": 10,
+                                        "timing_qualifier": "You Go, I Go"
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "single push press partner at extension",
+                                            "source_text": "revo single push press partner at extension",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "revo bar"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 90,
+                                        "rest_duration_seconds": 10,
+                                        "timing_qualifier": "You Go, I Go"
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "plank feet twist",
+                                            "source_text": "plank feet twist",
+                                            "prescribed_equipment": []
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 90,
+                                        "rest_duration_seconds": 10,
+                                        "timing_qualifier": "You Go, I Go"
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "rack squat",
+                                            "source_text": "kettlebell rack squat",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "kettlebell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 90,
+                                        "rest_duration_seconds": 10,
+                                        "timing_qualifier": "You Go, I Go"
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "ski erg & high knees combo",
+                                            "source_text": "ski erg & high knees combo",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "ski erg"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 90,
+                                        "rest_duration_seconds": 10,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "floor press",
+                                            "source_text": "dumbbell floor press",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "dumbbell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 90,
+                                        "rest_duration_seconds": 10,
+                                        "timing_qualifier": "You Go, I Go"
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "sit up",
+                                            "source_text": "sit up",
+                                            "prescribed_equipment": []
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 90,
+                                        "rest_duration_seconds": 10,
+                                        "timing_qualifier": "You Go, I Go"
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "push up + bent over row",
+                                            "source_text": "ybell push up + bent over row",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "ybell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 90,
+                                        "rest_duration_seconds": 10,
+                                        "timing_qualifier": "You Go, I Go"
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "bike erg & squat jump combo",
+                                            "source_text": "bike erg & squat jump combo",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "bike erg"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 90,
+                                        "rest_duration_seconds": 10,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "thruster",
+                                            "source_text": "plate thruster",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "plate"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 90,
+                                        "rest_duration_seconds": 10,
+                                        "timing_qualifier": "You Go, I Go"
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "hop + burpee",
+                                            "source_text": "4x bench hop + burpee",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "bench"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 90,
+                                        "rest_duration_seconds": 10,
+                                        "timing_qualifier": "You Go, I Go"
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "sled center push sprint relay 2",
+                                            "source_text": "sled center push sprint relay 2",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "sled"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 90,
+                                        "rest_duration_seconds": 10,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "rdl",
+                                            "source_text": "dumbbell rdl",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "dumbbell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 90,
+                                        "rest_duration_seconds": 10,
+                                        "timing_qualifier": "You Go, I Go"
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "bicep curls",
+                                            "source_text": "barbell bicep curls",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "barbell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 90,
+                                        "rest_duration_seconds": 10,
+                                        "timing_qualifier": "You Go, I Go"
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        }
+                    ],
+                    "repetitions": 1
+                },
+                {
+                    "stations": [
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "static lunge partner holds isometric lunge",
+                                            "source_text": "5x static lunge partner holds isometric lunge",
+                                            "prescribed_equipment": []
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 10,
+                                        "timing_qualifier": "You Go, I Go"
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "devils press",
+                                            "source_text": "dumbbell devils press",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "dumbbell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 10,
+                                        "timing_qualifier": "You Go, I Go"
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "box step ups",
+                                            "source_text": "soft box step ups",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "box"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 10,
+                                        "timing_qualifier": "You Go, I Go"
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "good morning",
+                                            "source_text": "plate good morning",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "plate"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 10,
+                                        "timing_qualifier": "You Go, I Go"
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "burpee hands off",
+                                            "source_text": "burpee hands off",
+                                            "prescribed_equipment": []
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 10,
+                                        "timing_qualifier": "You Go, I Go"
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "single push press partner at extension",
+                                            "source_text": "revo single push press partner at extension",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "revo bar"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 10,
+                                        "timing_qualifier": "You Go, I Go"
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "plank feet twist",
+                                            "source_text": "plank feet twist",
+                                            "prescribed_equipment": []
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 10,
+                                        "timing_qualifier": "You Go, I Go"
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "rack squat",
+                                            "source_text": "kettlebell rack squat",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "kettlebell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 10,
+                                        "timing_qualifier": "You Go, I Go"
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "ski erg & high knees combo",
+                                            "source_text": "ski erg & high knees combo",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "ski erg"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 10,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "floor press",
+                                            "source_text": "dumbbell floor press",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "dumbbell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 10,
+                                        "timing_qualifier": "You Go, I Go"
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "sit up",
+                                            "source_text": "sit up",
+                                            "prescribed_equipment": []
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 10,
+                                        "timing_qualifier": "You Go, I Go"
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "push up + bent over row",
+                                            "source_text": "ybell push up + bent over row",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "ybell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 10,
+                                        "timing_qualifier": "You Go, I Go"
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "bike erg & squat jump combo",
+                                            "source_text": "bike erg & squat jump combo",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "bike erg"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 10,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "thruster",
+                                            "source_text": "plate thruster",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "plate"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 10,
+                                        "timing_qualifier": "You Go, I Go"
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "hop + burpee",
+                                            "source_text": "4x bench hop + burpee",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "bench"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 10,
+                                        "timing_qualifier": "You Go, I Go"
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "sled center push sprint relay 2",
+                                            "source_text": "sled center push sprint relay 2",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "sled"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 10,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "rdl",
+                                            "source_text": "dumbbell rdl",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "dumbbell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 10,
+                                        "timing_qualifier": "You Go, I Go"
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "bicep curls",
+                                            "source_text": "barbell bicep curls",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "barbell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 10,
+                                        "timing_qualifier": "You Go, I Go"
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        }
+                    ],
+                    "repetitions": 1
+                }
+            ]
+        }
+    ]
+}

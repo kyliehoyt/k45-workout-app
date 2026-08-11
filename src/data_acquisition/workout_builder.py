@@ -2,6 +2,8 @@
 
 import argparse
 from dataclasses import replace
+from datetime import datetime
+import json
 from pathlib import Path
 import re
 
@@ -34,7 +36,8 @@ class WorkoutBuilder:
     POD_SCOPE_PATTERN = re.compile(r"\bpods?\s+([0-9&,\sand]+)", re.IGNORECASE)
     LAP_SCOPE_PATTERN = re.compile(r"\blaps?\s+(\d+)", re.IGNORECASE)
     SET_SCOPE_PATTERN = re.compile(r"\bsets?\s+([0-9&,\sand]+)", re.IGNORECASE)
-    DEFAULT_TIMING = SetTiming(work_duration_seconds=45, rest_duration_seconds=15)
+    DEFAULT_TIMING = SetTiming(
+        work_duration_seconds=45, rest_duration_seconds=15)
 
     def __init__(self, exercise_repository=None):
         """
@@ -126,7 +129,8 @@ class WorkoutBuilder:
     ) -> Station:
         sets = []
         for set_index in range(1, set_count + 1):
-            exercise_texts = station_group[min(set_index - 1, len(station_group) - 1)]
+            exercise_texts = station_group[min(
+                set_index - 1, len(station_group) - 1)]
             exercises, qualifier = self._build_exercises(exercise_texts)
             timing = self._timing_for(
                 timing_rules=timing_rules,
@@ -188,7 +192,8 @@ class WorkoutBuilder:
             for index in range(0, len(exercise_texts), 2):
                 activation_exercise_text = exercise_texts[index]
                 main_exercise_text = exercise_texts[index + 1]
-                groups.append([[activation_exercise_text], [main_exercise_text]])
+                groups.append(
+                    [[activation_exercise_text], [main_exercise_text]])
             return groups
 
         # exercises are given as a single list of exercises, one per station
@@ -204,7 +209,8 @@ class WorkoutBuilder:
                 continue
             number = int(match.group(1))
             exercise_text = match.group(2).strip()
-            exercise_texts_by_number.setdefault(number, []).append(exercise_text)
+            exercise_texts_by_number.setdefault(
+                number, []).append(exercise_text)
         return exercise_texts_by_number
 
     def _uses_repeated_numbered_options(
@@ -228,7 +234,8 @@ class WorkoutBuilder:
         sets_text: str,
     ) -> bool:
         lower_sets = sets_text.lower()
-        effective_station_count = self._parenthetical_count(sets_text) or station_count
+        effective_station_count = self._parenthetical_count(
+            sets_text) or station_count
         return (
             exercise_count == effective_station_count * 2
             and set_count > 1
@@ -250,7 +257,8 @@ class WorkoutBuilder:
             if rule["timing"].timing_qualifier == TimingQualifier.ELEVEN_FORTYFIVE
             for pod in rule.get("pods", [])
         }
-        remaining_station_count = len(station_groups) - len(single_station_pods)
+        remaining_station_count = len(
+            station_groups) - len(single_station_pods)
         flexible_pod_count = pod_count - len(single_station_pods)
         base_size = (
             remaining_station_count // flexible_pod_count if flexible_pod_count else 0
@@ -268,7 +276,7 @@ class WorkoutBuilder:
                 size = base_size + (1 if extra > 0 else 0)
                 extra -= 1 if extra > 0 else 0
             pod_station_groups.append(
-                station_groups[station_index : station_index + size]
+                station_groups[station_index: station_index + size]
             )
             station_index += size
 
@@ -316,7 +324,8 @@ class WorkoutBuilder:
         qualifier = None
 
         if re.search(r"\bygig\b", clean_name, flags=re.IGNORECASE):
-            clean_name = re.sub(r"\bygig\b", "", clean_name, flags=re.IGNORECASE)
+            clean_name = re.sub(r"\bygig\b", "", clean_name,
+                                flags=re.IGNORECASE)
             qualifier = TimingQualifier.YOU_GO_I_GO
 
         return self._normalize_spaces(clean_name), qualifier
@@ -361,7 +370,8 @@ class WorkoutBuilder:
 
         return SetTiming(
             work_duration_seconds=int(work_match.group(1)),
-            rest_duration_seconds=int(rest_match.group(1)) if rest_match else 0,
+            rest_duration_seconds=int(
+                rest_match.group(1)) if rest_match else 0,
         )
 
     def _timing_for(
@@ -426,7 +436,8 @@ class WorkoutBuilder:
         return {int(value) for value in re.findall(r"\d+", match.group(1))}
 
     def _parse_trailing_count(self, label_pattern: str, text: str) -> int | None:
-        match = re.search(rf"\b(\d+)\s+{label_pattern}\b", text, flags=re.IGNORECASE)
+        match = re.search(
+            rf"\b(\d+)\s+{label_pattern}\b", text, flags=re.IGNORECASE)
         return int(match.group(1)) if match else None
 
     def _compress_laps(self, laps: list[Lap]) -> list[Lap]:
@@ -467,6 +478,66 @@ class WorkoutBuilder:
     def _normalize_spaces(self, text: str) -> str:
         return re.sub(r"\s+", " ", text).strip()
 
+    def save_workout_to_json(self, workout: Workout, output_file: str | Path) -> None:
+        """
+        Save a Workout object to a JSON file.
+
+        Args:
+            workout: The Workout object to save.
+            output_file: The path to the output JSON file.
+        """
+        workout_dict = {
+            "name": workout.name,
+            "import_date": datetime.now().strftime("%Y-%m-%d"),
+            "pods": [
+                {
+                    "laps": [
+                        {
+                            "stations": [
+                                {
+                                    "sets": [
+                                        {
+                                            "exercises": [
+                                                {
+                                                    "name": exercise_prescription.exercise.name,
+                                                    "source_text": exercise_prescription.source_text,
+                                                    "prescribed_equipment": [
+                                                        {
+                                                            "name": equipment_option.option.name
+                                                            if equipment_option.option
+                                                            else None
+                                                        }
+                                                        for equipment_option in exercise_prescription.prescribed_equipment
+                                                    ] if exercise_prescription.prescribed_equipment else [],
+                                                }
+                                                for exercise_prescription in exercise_set.exercises
+                                            ],
+                                            "timing": {
+                                                "work_duration_seconds": exercise_set.timing.work_duration_seconds,
+                                                "rest_duration_seconds": exercise_set.timing.rest_duration_seconds,
+                                                "timing_qualifier": exercise_set.timing.timing_qualifier.value
+                                                if exercise_set.timing.timing_qualifier
+                                                else None,
+                                            },
+                                            "repetitions": exercise_set.repetitions,
+                                        }
+                                        for exercise_set in station.sets
+                                    ]
+                                }
+                                for station in lap.stations
+                            ],
+                            "repetitions": lap.repetitions,
+                        }
+                        for lap in pod.laps
+                    ]
+                }
+                for pod in workout.pods
+            ],
+        }
+
+        with open(output_file, "w", encoding="utf-8") as file:
+            json.dump(workout_dict, file, ensure_ascii=False, indent=4)
+
 
 def _format_timing(timing: SetTiming) -> str:
     timing_text = (
@@ -485,7 +556,8 @@ def _print_workout(workout: Workout) -> None:
         print(f"  Pod {pod_number}: {len(pod.laps)} lap pattern(s)")
         for lap_number, lap in enumerate(pod.laps, start=1):
             lap_suffix = f" x{lap.repetitions}" if lap.repetitions > 1 else ""
-            print(f"    Lap {lap_number}{lap_suffix}: {len(lap.stations)} station(s)")
+            print(
+                f"    Lap {lap_number}{lap_suffix}: {len(lap.stations)} station(s)")
             for station_number, station in enumerate(lap.stations, start=1):
                 print(
                     f"      Station {station_number}: "
@@ -508,7 +580,8 @@ def _print_workout(workout: Workout) -> None:
                                 equipment_option
                             ) in exercise_prescription.prescribed_equipment:
                                 if equipment_option.option:
-                                    equipment_names.append(equipment_option.option.name)
+                                    equipment_names.append(
+                                        equipment_option.option.name)
 
                     unique_equipment = set(equipment_names)
                     unique_equipment_str = (
@@ -557,6 +630,10 @@ def main() -> None:
 
     print(f"Built {len(workouts)} workout(s) from {input_file}.\n")
     for workout in workouts:
+        WorkoutBuilder().save_workout_to_json(
+            workout, Path("src") / "data" / "workouts" /
+            f"{workout.name}.json"
+        )
         _print_workout(workout)
 
 

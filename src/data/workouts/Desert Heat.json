@@ -1,0 +1,295 @@
+{
+    "name": "Desert Heat",
+    "import_date": "2026-08-10",
+    "pods": [
+        {
+            "laps": [
+                {
+                    "stations": [
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "burpees",
+                                            "source_text": "kettlebell burpees",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "kettlebell"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "alternate floor row pause neutral grip",
+                                            "source_text": "kettlebell alternate floor row pause neutral grip",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "kettlebell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 40,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 2
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "row erg",
+                                            "source_text": "row erg",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "row erg"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "bicep drag curl",
+                                            "source_text": "revo bicep drag curl",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "revo bar"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 40,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 2
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "plyo lunge",
+                                            "source_text": "plyo lunge",
+                                            "prescribed_equipment": []
+                                        },
+                                        {
+                                            "name": "forward lunges",
+                                            "source_text": "dumbbell forward lunges",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "dumbbell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 40,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 2
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "shuttle sprint with lateral jumps",
+                                            "source_text": "shuttle sprint with lateral jumps",
+                                            "prescribed_equipment": []
+                                        },
+                                        {
+                                            "name": "rdl + hang high pull",
+                                            "source_text": "barbell rdl + hang high pull",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "barbell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 40,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 2
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "bike erg",
+                                            "source_text": "bike erg",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "bike erg"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "single arm push press 5 each side",
+                                            "source_text": "dumbbell single arm push press 5 each side",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "dumbbell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 40,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 2
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "assisted vertical jump",
+                                            "source_text": "power band assisted vertical jump",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "band"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "chin up overhand grip",
+                                            "source_text": "chin up overhand grip",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "bar"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 40,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 2
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "flutter kicks",
+                                            "source_text": "ybell flutter kicks",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "ybell"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "single lying tricep extension hip bridge",
+                                            "source_text": "ybell single lying tricep extension hip bridge",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "ybell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 40,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 2
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "box jump",
+                                            "source_text": "soft box jump",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "box"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "box eccentric step down",
+                                            "source_text": "soft box eccentric step down",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "box"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 40,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 2
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "ski erg",
+                                            "source_text": "ski erg",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "ski erg"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "slides archer push ups",
+                                            "source_text": "slides archer push ups",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "slides"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 40,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 2
+                                }
+                            ]
+                        }
+                    ],
+                    "repetitions": 2
+                }
+            ]
+        }
+    ]
+}

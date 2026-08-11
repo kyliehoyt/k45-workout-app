@@ -1,0 +1,260 @@
+{
+    "name": "Apollo",
+    "import_date": "2026-08-10",
+    "pods": [
+        {
+            "laps": [
+                {
+                    "stations": [
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "tricep kickbacks",
+                                            "source_text": "ybell tricep kickbacks",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "ybell"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "pendulum lunge",
+                                            "source_text": "ybell pendulum lunge",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "ybell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 35,
+                                        "rest_duration_seconds": 25,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 4
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "single goblet row tempo",
+                                            "source_text": "dumbbell single goblet row tempo",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "dumbbell"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "single clean + squat",
+                                            "source_text": "dumbbell single clean + squat",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "dumbbell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 35,
+                                        "rest_duration_seconds": 25,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 4
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "single v sit press",
+                                            "source_text": "dumbbell single v sit press",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "dumbbell"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "single leg deadlift",
+                                            "source_text": "dumbbell single leg deadlift",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "dumbbell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 35,
+                                        "rest_duration_seconds": 25,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 4
+                                }
+                            ]
+                        }
+                    ],
+                    "repetitions": 1
+                }
+            ]
+        },
+        {
+            "laps": [
+                {
+                    "stations": [
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "incline pull",
+                                            "source_text": "dumbbell bench incline pull",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "dumbbell"
+                                                },
+                                                {
+                                                    "name": "bench"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "front squat",
+                                            "source_text": "olympic barbell front squat",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "barbell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 705,
+                                        "rest_duration_seconds": 0,
+                                        "timing_qualifier": "11:45"
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        }
+                    ],
+                    "repetitions": 1
+                }
+            ]
+        },
+        {
+            "laps": [
+                {
+                    "stations": [
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "deadlift + row",
+                                            "source_text": "sandbag deadlift + row",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "sandbag"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "hip thruster",
+                                            "source_text": "sandbag hip thruster",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "sandbag"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 35,
+                                        "rest_duration_seconds": 25,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 4
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "reverse curls",
+                                            "source_text": "barbell reverse curls",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "barbell"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "rdl pause",
+                                            "source_text": "barbell rdl pause",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "barbell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 35,
+                                        "rest_duration_seconds": 25,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 4
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "full depth push up pause",
+                                            "source_text": "kettlebell full depth push up pause",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "kettlebell"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "suitcase farmers walk",
+                                            "source_text": "double kb suitcase farmers walk",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "kettlebell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 35,
+                                        "rest_duration_seconds": 25,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 4
+                                }
+                            ]
+                        }
+                    ],
+                    "repetitions": 1
+                }
+            ]
+        }
+    ]
+}

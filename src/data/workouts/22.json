@@ -1,0 +1,423 @@
+{
+    "name": "22",
+    "import_date": "2026-08-10",
+    "pods": [
+        {
+            "laps": [
+                {
+                    "stations": [
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "box lateral hops + reverse shuffle",
+                                            "source_text": "step trainer lateral hops + reverse shuffle",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "box"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 45,
+                                        "rest_duration_seconds": 15,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 2
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "row erg",
+                                            "source_text": "row erg",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "row erg"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 45,
+                                        "rest_duration_seconds": 15,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 2
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "squat jump pivot",
+                                            "source_text": "squat jump pivot",
+                                            "prescribed_equipment": []
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 45,
+                                        "rest_duration_seconds": 15,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 2
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "squat press",
+                                            "source_text": "revo squat press",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "revo bar"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 45,
+                                        "rest_duration_seconds": 15,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 2
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "row + burpee",
+                                            "source_text": "deadball row + burpee",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "deadball"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 45,
+                                        "rest_duration_seconds": 15,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 2
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "carry with 3 squats at each end",
+                                            "source_text": "carry with 3 squats at each end",
+                                            "prescribed_equipment": []
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 45,
+                                        "rest_duration_seconds": 15,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 2
+                                }
+                            ]
+                        }
+                    ],
+                    "repetitions": 1
+                }
+            ]
+        },
+        {
+            "laps": [
+                {
+                    "stations": [
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "speed standing lat pull pause",
+                                            "source_text": "power band speed standing lat pull pause 4x1",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "band"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 45,
+                                        "rest_duration_seconds": 15,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 2
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "bike erg standing",
+                                            "source_text": "bike erg standing",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "bike erg"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 45,
+                                        "rest_duration_seconds": 15,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 2
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "speed sprawls",
+                                            "source_text": "speed sprawls",
+                                            "prescribed_equipment": []
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 45,
+                                        "rest_duration_seconds": 15,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 2
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "plank + alternate knee to elbow",
+                                            "source_text": "balance trainer plank + alternate knee to elbow",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "balance trainer"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 45,
+                                        "rest_duration_seconds": 15,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 2
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "sumo squat upright row unbroken",
+                                            "source_text": "kettlebell sumo squat upright row unbroken",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "kettlebell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 45,
+                                        "rest_duration_seconds": 15,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 2
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "seated knee to elbow",
+                                            "source_text": "seated knee to elbow",
+                                            "prescribed_equipment": []
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 45,
+                                        "rest_duration_seconds": 15,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 2
+                                }
+                            ]
+                        }
+                    ],
+                    "repetitions": 1
+                }
+            ]
+        },
+        {
+            "laps": [
+                {
+                    "stations": [
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "plyo lunge switch jump same leg",
+                                            "source_text": "plyo lunge switch jump same leg",
+                                            "prescribed_equipment": []
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 45,
+                                        "rest_duration_seconds": 15,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 2
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "snatch",
+                                            "source_text": "dumbbell snatch",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "dumbbell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 45,
+                                        "rest_duration_seconds": 15,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 2
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "bear crawl reverse soft box step up",
+                                            "source_text": "bear crawl reverse soft box step up",
+                                            "prescribed_equipment": []
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 45,
+                                        "rest_duration_seconds": 15,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 2
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "single crunch + punch",
+                                            "source_text": "ybell single crunch + punch",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "ybell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 45,
+                                        "rest_duration_seconds": 15,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 2
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "ski erg regular",
+                                            "source_text": "ski erg regular",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "ski erg"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 45,
+                                        "rest_duration_seconds": 15,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 2
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "box march",
+                                            "source_text": "box march",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "box"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 45,
+                                        "rest_duration_seconds": 15,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 2
+                                }
+                            ]
+                        }
+                    ],
+                    "repetitions": 1
+                }
+            ]
+        }
+    ]
+}

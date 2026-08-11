@@ -1,0 +1,859 @@
+{
+    "name": "The Piston",
+    "import_date": "2026-08-10",
+    "pods": [
+        {
+            "laps": [
+                {
+                    "stations": [
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "rdl + double row",
+                                            "source_text": "dumbbell rdl + double row",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "dumbbell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 35,
+                                        "rest_duration_seconds": 25,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "box chest fly",
+                                            "source_text": "dumbbell step trainer chest fly",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "dumbbell"
+                                                },
+                                                {
+                                                    "name": "box"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 35,
+                                        "rest_duration_seconds": 25,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "sumo goblet squat",
+                                            "source_text": "single kb sumo goblet squat",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "kettlebell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 35,
+                                        "rest_duration_seconds": 25,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "tricep pulldowns tempo",
+                                            "source_text": "power band tricep pulldowns tempo",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "band"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 35,
+                                        "rest_duration_seconds": 25,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "overhead split squat",
+                                            "source_text": "revo overhead split squat",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "revo bar"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 35,
+                                        "rest_duration_seconds": 25,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "frozen v sit",
+                                            "source_text": "frozen v sit",
+                                            "prescribed_equipment": []
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 35,
+                                        "rest_duration_seconds": 25,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "box bicep curl to arnold press",
+                                            "source_text": "dumbbell box bicep curl to arnold press",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "dumbbell"
+                                                },
+                                                {
+                                                    "name": "box"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 35,
+                                        "rest_duration_seconds": 25,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "conventional deadlift",
+                                            "source_text": "barbell conventional deadlift",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "barbell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 35,
+                                        "rest_duration_seconds": 25,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "bent over row offset grip pulse",
+                                            "source_text": "sandbag bent over row offset grip pulse",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "sandbag"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 35,
+                                        "rest_duration_seconds": 25,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "forward lunge alternating",
+                                            "source_text": "single kb forward lunge alternating",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "kettlebell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 35,
+                                        "rest_duration_seconds": 25,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "double bicep curl twist center grip",
+                                            "source_text": "ybell double bicep curl twist center grip",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "ybell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 35,
+                                        "rest_duration_seconds": 25,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "landmine rotation side to side",
+                                            "source_text": "landmine rotation side to side",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "landmine"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 35,
+                                        "rest_duration_seconds": 25,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        }
+                    ],
+                    "repetitions": 1
+                },
+                {
+                    "stations": [
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "rdl + double row",
+                                            "source_text": "dumbbell rdl + double row",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "dumbbell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 45,
+                                        "rest_duration_seconds": 15,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "box chest fly",
+                                            "source_text": "dumbbell step trainer chest fly",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "dumbbell"
+                                                },
+                                                {
+                                                    "name": "box"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 45,
+                                        "rest_duration_seconds": 15,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "sumo goblet squat",
+                                            "source_text": "single kb sumo goblet squat",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "kettlebell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 45,
+                                        "rest_duration_seconds": 15,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "tricep pulldowns tempo",
+                                            "source_text": "power band tricep pulldowns tempo",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "band"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 45,
+                                        "rest_duration_seconds": 15,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "overhead split squat",
+                                            "source_text": "revo overhead split squat",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "revo bar"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 45,
+                                        "rest_duration_seconds": 15,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "frozen v sit",
+                                            "source_text": "frozen v sit",
+                                            "prescribed_equipment": []
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 45,
+                                        "rest_duration_seconds": 15,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "box bicep curl to arnold press",
+                                            "source_text": "dumbbell box bicep curl to arnold press",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "dumbbell"
+                                                },
+                                                {
+                                                    "name": "box"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 45,
+                                        "rest_duration_seconds": 15,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "conventional deadlift",
+                                            "source_text": "barbell conventional deadlift",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "barbell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 45,
+                                        "rest_duration_seconds": 15,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "bent over row offset grip pulse",
+                                            "source_text": "sandbag bent over row offset grip pulse",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "sandbag"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 45,
+                                        "rest_duration_seconds": 15,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "forward lunge alternating",
+                                            "source_text": "single kb forward lunge alternating",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "kettlebell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 45,
+                                        "rest_duration_seconds": 15,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "double bicep curl twist center grip",
+                                            "source_text": "ybell double bicep curl twist center grip",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "ybell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 45,
+                                        "rest_duration_seconds": 15,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "landmine rotation side to side",
+                                            "source_text": "landmine rotation side to side",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "landmine"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 45,
+                                        "rest_duration_seconds": 15,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        }
+                    ],
+                    "repetitions": 1
+                },
+                {
+                    "stations": [
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "rdl + double row",
+                                            "source_text": "dumbbell rdl + double row",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "dumbbell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 40,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "box chest fly",
+                                            "source_text": "dumbbell step trainer chest fly",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "dumbbell"
+                                                },
+                                                {
+                                                    "name": "box"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 40,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "sumo goblet squat",
+                                            "source_text": "single kb sumo goblet squat",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "kettlebell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 40,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "tricep pulldowns tempo",
+                                            "source_text": "power band tricep pulldowns tempo",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "band"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 40,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "overhead split squat",
+                                            "source_text": "revo overhead split squat",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "revo bar"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 40,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "frozen v sit",
+                                            "source_text": "frozen v sit",
+                                            "prescribed_equipment": []
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 40,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "box bicep curl to arnold press",
+                                            "source_text": "dumbbell box bicep curl to arnold press",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "dumbbell"
+                                                },
+                                                {
+                                                    "name": "box"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 40,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "conventional deadlift",
+                                            "source_text": "barbell conventional deadlift",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "barbell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 40,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "bent over row offset grip pulse",
+                                            "source_text": "sandbag bent over row offset grip pulse",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "sandbag"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 40,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "forward lunge alternating",
+                                            "source_text": "single kb forward lunge alternating",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "kettlebell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 40,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "double bicep curl twist center grip",
+                                            "source_text": "ybell double bicep curl twist center grip",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "ybell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 40,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "landmine rotation side to side",
+                                            "source_text": "landmine rotation side to side",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "landmine"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 40,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        }
+                    ],
+                    "repetitions": 1
+                }
+            ]
+        }
+    ]
+}

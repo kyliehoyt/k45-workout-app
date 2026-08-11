@@ -1,0 +1,393 @@
+{
+    "name": "The 9's",
+    "import_date": "2026-08-10",
+    "pods": [
+        {
+            "laps": [
+                {
+                    "stations": [
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "double push up + row top grip",
+                                            "source_text": "ybell double push up + row top grip",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "ybell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 45,
+                                        "rest_duration_seconds": 15,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                },
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "double push up + row top grip",
+                                            "source_text": "ybell double push up + row top grip",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "ybell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 45,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "single crunch + punch",
+                                            "source_text": "ybell single crunch + punch",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "ybell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 45,
+                                        "rest_duration_seconds": 15,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                },
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "single crunch + punch",
+                                            "source_text": "ybell single crunch + punch",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "ybell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 45,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "forward lunge",
+                                            "source_text": "revo forward lunge",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "revo bar"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 45,
+                                        "rest_duration_seconds": 15,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                },
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "forward lunge",
+                                            "source_text": "revo forward lunge",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "revo bar"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 45,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "squat jump",
+                                            "source_text": "revo squat jump",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "revo bar"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 45,
+                                        "rest_duration_seconds": 15,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                },
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "squat jump",
+                                            "source_text": "revo squat jump",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "revo bar"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 45,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "rdl",
+                                            "source_text": "dumbbell rdl",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "dumbbell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 45,
+                                        "rest_duration_seconds": 15,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                },
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "rdl",
+                                            "source_text": "dumbbell rdl",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "dumbbell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 45,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "overhead swing + push press",
+                                            "source_text": "dumbbell overhead swing + push press",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "dumbbell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 45,
+                                        "rest_duration_seconds": 15,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                },
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "overhead swing + push press",
+                                            "source_text": "dumbbell overhead swing + push press",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "dumbbell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 45,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "suitcase squat",
+                                            "source_text": "kettlebell suitcase squat",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "kettlebell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 45,
+                                        "rest_duration_seconds": 15,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                },
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "suitcase squat",
+                                            "source_text": "kettlebell suitcase squat",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "kettlebell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 45,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "squat + upright row",
+                                            "source_text": "kettlebell squat + upright row",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "kettlebell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 45,
+                                        "rest_duration_seconds": 15,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                },
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "squat + upright row",
+                                            "source_text": "kettlebell squat + upright row",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "kettlebell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 45,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "slides knee tucks",
+                                            "source_text": "GHR knee tucks",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "slides"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 45,
+                                        "rest_duration_seconds": 15,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                },
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "slides knee tucks",
+                                            "source_text": "GHR knee tucks",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "slides"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 45,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        }
+                    ],
+                    "repetitions": 2
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,303 @@
+{
+    "name": "Tokyo Disco",
+    "import_date": "2026-08-10",
+    "pods": [
+        {
+            "laps": [
+                {
+                    "stations": [
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "alternate chest press",
+                                            "source_text": "dumbbell flat bench alternate chest press",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "dumbbell"
+                                                },
+                                                {
+                                                    "name": "bench"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 35,
+                                        "rest_duration_seconds": 25,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 3
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "alternate floor row neutral grip",
+                                            "source_text": "kettlebell alternate floor row neutral grip",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "kettlebell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 35,
+                                        "rest_duration_seconds": 25,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 3
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "front raise tempo",
+                                            "source_text": "revo front raise tempo",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "revo bar"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 35,
+                                        "rest_duration_seconds": 25,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 3
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "seated shoulder press one & half",
+                                            "source_text": "ybell seated shoulder press one & half",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "ybell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 35,
+                                        "rest_duration_seconds": 25,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 3
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "rear delt kickback",
+                                            "source_text": "dumbbell rear delt kickback",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "dumbbell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 35,
+                                        "rest_duration_seconds": 25,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 3
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "chin up banded hold",
+                                            "source_text": "chin up banded hold",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "bar"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 35,
+                                        "rest_duration_seconds": 25,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 3
+                                }
+                            ]
+                        }
+                    ],
+                    "repetitions": 1
+                }
+            ]
+        },
+        {
+            "laps": [
+                {
+                    "stations": [
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "racked box step up alternating",
+                                            "source_text": "single kb racked box step up alternating",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "kettlebell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 35,
+                                        "rest_duration_seconds": 25,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 3
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "good morning",
+                                            "source_text": "sandbag good morning",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "sandbag"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 35,
+                                        "rest_duration_seconds": 25,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 3
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "backloaded reverse lunges",
+                                            "source_text": "plate backloaded reverse lunges",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "plate"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 35,
+                                        "rest_duration_seconds": 25,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 3
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "slides hamstring curls",
+                                            "source_text": "GHR hamstring curls",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "slides"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 35,
+                                        "rest_duration_seconds": 25,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 3
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "suitcase squat pause",
+                                            "source_text": "dumbbell suitcase squat pause",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "dumbbell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 35,
+                                        "rest_duration_seconds": 25,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 3
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "rdl",
+                                            "source_text": "barbell rdl",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "barbell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 35,
+                                        "rest_duration_seconds": 25,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 3
+                                }
+                            ]
+                        }
+                    ],
+                    "repetitions": 1
+                }
+            ]
+        }
+    ]
+}

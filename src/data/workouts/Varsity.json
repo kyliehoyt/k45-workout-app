@@ -1,0 +1,622 @@
+{
+    "name": "Varsity",
+    "import_date": "2026-08-10",
+    "pods": [
+        {
+            "laps": [
+                {
+                    "stations": [
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "battle ropes singles",
+                                            "source_text": "battle ropes singles",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "battle ropes"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 20,
+                                        "rest_duration_seconds": 10,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 3
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "half burpee",
+                                            "source_text": "half burpee",
+                                            "prescribed_equipment": []
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 20,
+                                        "rest_duration_seconds": 10,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 3
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "bike erg seated",
+                                            "source_text": "bike erg seated",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "bike erg"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 20,
+                                        "rest_duration_seconds": 10,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 3
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "slides knee tuck shoulder touch",
+                                            "source_text": "slides 5x knee tuck 2x shoulder touch",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "slides"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 20,
+                                        "rest_duration_seconds": 10,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 3
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "row erg",
+                                            "source_text": "hyrox cruise (row erg)",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "row erg"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 20,
+                                        "rest_duration_seconds": 10,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 3
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "suitcase squat jumps",
+                                            "source_text": "ybell suitcase squat jumps",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "ybell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 20,
+                                        "rest_duration_seconds": 10,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 3
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "single alternate clean + lunge",
+                                            "source_text": "ybell single alternate clean + lunge",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "ybell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 20,
+                                        "rest_duration_seconds": 10,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 3
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "box hurdle forward hurdle jump + back pedal",
+                                            "source_text": "agility box hurdle forward hurdle jump + back pedal",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "box"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 20,
+                                        "rest_duration_seconds": 10,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 3
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "shuttle sprint",
+                                            "source_text": "shuttle sprint",
+                                            "prescribed_equipment": []
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 20,
+                                        "rest_duration_seconds": 10,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 3
+                                }
+                            ]
+                        }
+                    ],
+                    "repetitions": 1
+                },
+                {
+                    "stations": [
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "battle ropes singles",
+                                            "source_text": "battle ropes singles",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "battle ropes"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 40,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 3
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "half burpee",
+                                            "source_text": "half burpee",
+                                            "prescribed_equipment": []
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 40,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 3
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "bike erg seated",
+                                            "source_text": "bike erg seated",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "bike erg"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 40,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 3
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "slides knee tuck shoulder touch",
+                                            "source_text": "slides 5x knee tuck 2x shoulder touch",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "slides"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 40,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 3
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "row erg",
+                                            "source_text": "hyrox cruise (row erg)",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "row erg"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 40,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 3
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "suitcase squat jumps",
+                                            "source_text": "ybell suitcase squat jumps",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "ybell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 40,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 3
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "single alternate clean + lunge",
+                                            "source_text": "ybell single alternate clean + lunge",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "ybell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 40,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 3
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "box hurdle forward hurdle jump + back pedal",
+                                            "source_text": "agility box hurdle forward hurdle jump + back pedal",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "box"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 40,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 3
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "shuttle sprint",
+                                            "source_text": "shuttle sprint",
+                                            "prescribed_equipment": []
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 40,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 3
+                                }
+                            ]
+                        }
+                    ],
+                    "repetitions": 1
+                },
+                {
+                    "stations": [
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "battle ropes singles",
+                                            "source_text": "battle ropes singles",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "battle ropes"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 30,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 3
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "half burpee",
+                                            "source_text": "half burpee",
+                                            "prescribed_equipment": []
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 30,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 3
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "bike erg seated",
+                                            "source_text": "bike erg seated",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "bike erg"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 30,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 3
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "slides knee tuck shoulder touch",
+                                            "source_text": "slides 5x knee tuck 2x shoulder touch",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "slides"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 30,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 3
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "row erg",
+                                            "source_text": "hyrox cruise (row erg)",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "row erg"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 30,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 3
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "suitcase squat jumps",
+                                            "source_text": "ybell suitcase squat jumps",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "ybell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 30,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 3
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "single alternate clean + lunge",
+                                            "source_text": "ybell single alternate clean + lunge",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "ybell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 30,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 3
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "box hurdle forward hurdle jump + back pedal",
+                                            "source_text": "agility box hurdle forward hurdle jump + back pedal",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "box"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 30,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 3
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "shuttle sprint",
+                                            "source_text": "shuttle sprint",
+                                            "prescribed_equipment": []
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 30,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 3
+                                }
+                            ]
+                        }
+                    ],
+                    "repetitions": 1
+                }
+            ]
+        }
+    ]
+}

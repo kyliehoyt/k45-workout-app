@@ -1,0 +1,554 @@
+{
+    "name": "Medusa",
+    "import_date": "2026-08-10",
+    "pods": [
+        {
+            "laps": [
+                {
+                    "stations": [
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "90 to 90 supported",
+                                            "source_text": "90 to 90 supported",
+                                            "prescribed_equipment": []
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 15,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                },
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "sumo rdl",
+                                            "source_text": "kettlebell sumo rdl",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "kettlebell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                },
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "sumo rdl",
+                                            "source_text": "kettlebell sumo rdl",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "kettlebell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 30,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "samson stretch alternate",
+                                            "source_text": "samson stretch alternate",
+                                            "prescribed_equipment": []
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 15,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                },
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "front squat + shoulder press + squat press",
+                                            "source_text": "barbell front squat + shoulder press + squat press",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "barbell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                },
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "front squat + shoulder press + squat press",
+                                            "source_text": "barbell front squat + shoulder press + squat press",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "barbell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 30,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "floor clock",
+                                            "source_text": "activation band floor clock",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "band"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 15,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                },
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "alternate chest press",
+                                            "source_text": "dumbbell flat bench alternate chest press",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "dumbbell"
+                                                },
+                                                {
+                                                    "name": "bench"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                },
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "alternate chest press",
+                                            "source_text": "dumbbell flat bench alternate chest press",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "dumbbell"
+                                                },
+                                                {
+                                                    "name": "bench"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 30,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "downward dog calf pedals",
+                                            "source_text": "downward dog calf pedals",
+                                            "prescribed_equipment": []
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 15,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                },
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "box step ups",
+                                            "source_text": "ybell soft box step ups",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "ybell"
+                                                },
+                                                {
+                                                    "name": "box"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                },
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "box step ups",
+                                            "source_text": "ybell soft box step ups",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "ybell"
+                                                },
+                                                {
+                                                    "name": "box"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 30,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "dynamic hamstring scoop",
+                                            "source_text": "dynamic hamstring scoop",
+                                            "prescribed_equipment": []
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 15,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                },
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "clean + lateral lunge",
+                                            "source_text": "sandbag clean + lateral lunge",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "sandbag"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                },
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "clean + lateral lunge",
+                                            "source_text": "sandbag clean + lateral lunge",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "sandbag"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 30,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "arm circles",
+                                            "source_text": "arm circles",
+                                            "prescribed_equipment": []
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 15,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                },
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "trx straps push up + knee tuck",
+                                            "source_text": "suspension trainer push up + knee tuck",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "TRX straps"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                },
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "trx straps push up + knee tuck",
+                                            "source_text": "suspension trainer push up + knee tuck",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "TRX straps"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 30,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "side to side lumbar twist",
+                                            "source_text": "side to side lumbar twist",
+                                            "prescribed_equipment": []
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 15,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                },
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "box bulgarian pulse",
+                                            "source_text": "dumbbell step trainer bulgarian pulse",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "dumbbell"
+                                                },
+                                                {
+                                                    "name": "box"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                },
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "box bulgarian pulse",
+                                            "source_text": "dumbbell step trainer bulgarian pulse",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "dumbbell"
+                                                },
+                                                {
+                                                    "name": "box"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 30,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "back roll + candle stick",
+                                            "source_text": "back roll + candle stick",
+                                            "prescribed_equipment": []
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 15,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                },
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "pendlay row",
+                                            "source_text": "olympic barbell pendlay row",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "barbell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                },
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "pendlay row",
+                                            "source_text": "olympic barbell pendlay row",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "barbell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 30,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        },
+                        {
+                            "sets": [
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "standing bicep curl",
+                                            "source_text": "power band standing bicep curl",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "band"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 15,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                },
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "bicep curl alternating",
+                                            "source_text": "dumbbell bicep curl alternating",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "dumbbell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 20,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                },
+                                {
+                                    "exercises": [
+                                        {
+                                            "name": "bicep curl alternating",
+                                            "source_text": "dumbbell bicep curl alternating",
+                                            "prescribed_equipment": [
+                                                {
+                                                    "name": "dumbbell"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "timing": {
+                                        "work_duration_seconds": 60,
+                                        "rest_duration_seconds": 30,
+                                        "timing_qualifier": null
+                                    },
+                                    "repetitions": 1
+                                }
+                            ]
+                        }
+                    ],
+                    "repetitions": 1
+                }
+            ]
+        }
+    ]
+}
